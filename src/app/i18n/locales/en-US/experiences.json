@@ -1,0 +1,59 @@
+{
+  "experiences": {
+    "Meta": {
+      "date": "07/2022 - Present",
+      "company": "Meta",
+      "companyUrl": "https://www.meta.com.br/",
+      "position": "Front End Developer",
+      "description": "Currently, I am part of the development of an innovative ERP software designed for internetbased companies that can be used universally, as well as a chat app, that uses AI to help the support team answer all the calls and messages from te clients. My focus on scalability, performance, and usability is reflected in my ability to design and implement new components and pages.\n\nAdditionally, I am committed to enhancing the user experience through cutting-edge ideas. I work alongside a diverse team of developers, testers, and DevOps using Scrum methodology to ensure seamless collaboration and high-quality solutions.",
+      "technologies": [
+        "React",
+        "Redux",
+        "Next.js",
+        "TypeScript",
+        "SASS",
+        "Material UI",
+        "Styled Components",
+        "Scrum"
+      ]
+    },
+    "Webde": {
+      "date": "01/2021 - 07/2022",
+      "company": "Webde",
+      "companyUrl": "https://webde.com.br/",
+      "position": "Front End Developer",
+      "description": "I have built an extensive track record in developing corporate and institutional websites and interfaces. I made critical decisions and implemented crucial improvements as part of the development team. Additionally, I specialized in restructuring legacy code and incorporating industry best practices into new projects. My proficiency in Next.js, PHP, and Laravel played a key role in creating several high-quality websites that meet the highest standards of quality and performance.",
+      "technologies": [
+        "React",
+        "Redux",
+        "Next.js",
+        "TypeScript",
+        "SASS",
+        "Vercel"
+      ]
+    },
+    "Freelancer": {
+      "date": "03/2019 - Present",
+      "company": "Freelancer",
+      "position": "Front End Developer",
+      "description": "Em minha jornada como desenvolvedor front-end freelancer, mergulhei em projetos diversos, dando vida a websites e interfaces de excelência. Minha abordagem envolve a aplicação de práticas inovadoras da indústria e a exploração das mais recentes tecnologias. Estabeleci uma conexão próxima com os clientes, assegurando que suas visões fossem traduzidas com maestria, resultando na entrega bem-sucedida de projetos dentro dos prazos estabelecidos e orçamentos acordados.",
+      "technologies": [
+        "React",
+        "Redux",
+        "PHP",
+        "Next.js",
+        "TypeScript",
+        "SASS",
+        "Vercel"
+      ]
+    },
+    "Nucleo": {
+      "date": "03/2019 - 01/2020",
+      "company": "Nucleo IT",
+      "companyUrl": "https://nucleosistemas.com.br/",
+      "position": "Front End Trainee",
+      "description": "As a developer intern, my contribution involved implementing BI systems for various companies. Additionally, I gained valuable experience in developing corporate websites for a variety of organizations throughout the state, including the creation of the company's own website. I also worked on the development of a web application for a local company, which involved the use of PHP, jQuery, Bootstrap, and MySQL.",
+      "technologies": ["React", "PHP", "jQuery", "Bootstrap", "MySQL"]
+    }
+  }
+}
