@@ -1,6 +1,7 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+'use client';
 
-import { NavigationContext } from '../../page';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { NavigationContext } from '../../Provider';
 
 export default function NavLinks() {
   const { currentSection, setCurrentSection } = useContext(NavigationContext);

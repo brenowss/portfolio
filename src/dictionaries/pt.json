@@ -1,0 +1,66 @@
+{
+  "about": {
+    "sectionTitle": "About",
+    "title": "Experienced Front End Engineer",
+    "motto": "I build exceptional and accessible digital experiences for the web.",
+    "text": "In 2023, I embarked on my Software Engineering degree at UNOPAR, complemented by courses at <a href='https://jstack.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>JStack</a> and <a href='https://rocketseat.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Rocketseat</a> bootcamps. Based in Santa Cruz do Sul/Rio Grande do Sul, I'm a seasoned Frontend Web Developer proficient in React, TypeScript, Next.JS, PHP, and Laravel. <br /><br /> At <a href='https://meta.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Meta</a> since 2022, I currently lead the development of an AI chatbot, enhancing customer support through React, Tailwind CSS, Redux, and TypeScript. My previous roles involved contributing to a universal ERP software and leading the development of a payments platform, showcasing adaptability and leadership. <br /><br /> Before Meta, I served as a Junior Web Developer at <a href='https://webde.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Webde Tecnologia</a>, excelling in interface development using Next.JS, PHP, and Laravel. I kickstarted my career at <a href='https://www.nucleosistemas.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Nucleo IT</a>, installing BI systems and developing business websites. <br /><br /> Amidst this exciting journey, my girlfriend and our furry companion are my pillars of support. Their encouragement fuels my passion for web development, turning challenges into shared victories. Fluent in English, conversational in Spanish, and a native Portuguese speaker, I balance my tech passion with gaming, playing football, a lot of family time, and occasional adventures around Brazil. My journey reflects a commitment to learning and crafting user-centric web solutions in the ever-evolving tech landscape, with a great passion about UX."
+  },
+  "experiences": {
+    "sectionTitle": "Experiências",
+    "Meta": {
+      "date": "07/2022 - Present",
+      "company": "Meta",
+      "companyUrl": "https://www.meta.com.br/",
+      "position": "Front End Developer",
+      "description": "Currently, I am part of the development of an innovative ERP software designed for internetbased companies that can be used universally, as well as a chat app, that uses AI to help the support team answer all the calls and messages from te clients. My focus on scalability, performance, and usability is reflected in my ability to design and implement new components and pages.\n\nAdditionally, I am committed to enhancing the user experience through cutting-edge ideas. I work alongside a diverse team of developers, testers, and DevOps using Scrum methodology to ensure seamless collaboration and high-quality solutions.",
+      "technologies": [
+        "React",
+        "Redux",
+        "Next.js",
+        "TypeScript",
+        "SASS",
+        "Material UI",
+        "Styled Components",
+        "Scrum"
+      ]
+    },
+    "Webde": {
+      "date": "01/2021 - 07/2022",
+      "company": "Webde",
+      "companyUrl": "https://webde.com.br/",
+      "position": "Front End Developer",
+      "description": "I have built an extensive track record in developing corporate and institutional websites and interfaces. I made critical decisions and implemented crucial improvements as part of the development team. Additionally, I specialized in restructuring legacy code and incorporating industry best practices into new projects. My proficiency in Next.js, PHP, and Laravel played a key role in creating several high-quality websites that meet the highest standards of quality and performance.",
+      "technologies": [
+        "React",
+        "Redux",
+        "Next.js",
+        "TypeScript",
+        "SASS",
+        "Vercel"
+      ]
+    },
+    "Freelancer": {
+      "date": "03/2019 - Present",
+      "company": "Freelancer",
+      "position": "Front End Developer",
+      "description": "In my journey as a freelance front-end developer, I have immersed myself in various projects, bringing exceptional websites and interfaces to life. My approach involves applying innovative industry practices and exploring the latest technologies. I have established a close connection with clients, ensuring that their visions are masterfully translated, resulting in successful project delivery within established timelines and agreed budgets.",
+      "technologies": [
+        "React",
+        "Redux",
+        "PHP",
+        "Next.js",
+        "TypeScript",
+        "SASS",
+        "Vercel"
+      ]
+    },
+    "Nucleo": {
+      "date": "03/2019 - 01/2020",
+      "company": "Nucleo IT",
+      "companyUrl": "https://nucleosistemas.com.br/",
+      "position": "Front End Trainee",
+      "description": "As a developer intern, my contribution involved implementing BI systems for various companies. Additionally, I gained valuable experience in developing corporate websites for a variety of organizations throughout the state, including the creation of the company's own website. I also worked on the development of a web application for a local company, which involved the use of PHP, jQuery, Bootstrap, and MySQL.",
+      "technologies": ["React", "PHP", "jQuery", "Bootstrap", "MySQL"]
+    }
+  }
+}

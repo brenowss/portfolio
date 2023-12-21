@@ -1,18 +1,19 @@
+'use client';
+
 import { useContext } from 'react';
-import { NavigationContext } from '../../page';
 import { InView } from 'react-intersection-observer';
-import { useTranslation } from '../../../i18n/client';
 import { BasePage } from '@customTypes/BasePage';
 import ExperienceCard from './ExperienceCard';
 import { experiences } from './experiences.json';
+import { getDictionary } from '../../../../get-dictionary';
+import { NavigationContext } from '../../Provider';
 
-interface MainProps extends BasePage {}
+interface MainProps extends BasePage {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+}
 
-export default function Main({ params: { lang } }: MainProps) {
+export default function Main({ params: { lang }, dictionary }: MainProps) {
   const { setCurrentSection } = useContext(NavigationContext);
-
-  const { t } = useTranslation(lang, 'translation');
-  const { t: tExperience } = useTranslation(lang, 'experiences');
 
   return (
     <main className="lg:w-1/2">
@@ -23,9 +24,9 @@ export default function Main({ params: { lang } }: MainProps) {
         onChange={(inView) => inView && setCurrentSection('about')}
       >
         <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-          {t('about.sectionTitle')}
+          {dictionary.about.sectionTitle}
         </h2>
-        <p dangerouslySetInnerHTML={{ __html: t('about.text') }} />
+        <p dangerouslySetInnerHTML={{ __html: dictionary.about.text }} />
       </InView>
 
       <InView
@@ -35,7 +36,7 @@ export default function Main({ params: { lang } }: MainProps) {
         onChange={(inView) => inView && setCurrentSection('experience')}
       >
         <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-          {t('experience.sectionTitle')}
+          {dictionary.experiences.sectionTitle}
         </h2>
 
         <ol className="group/list">

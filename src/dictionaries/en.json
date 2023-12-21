@@ -1,5 +1,12 @@
 {
+  "about": {
+    "sectionTitle": "About",
+    "title": "Experienced Front End Engineer",
+    "motto": "I build exceptional and accessible digital experiences for the web.",
+    "text": "In 2023, I embarked on my Software Engineering degree at UNOPAR, complemented by courses at <a href='https://jstack.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>JStack</a> and <a href='https://rocketseat.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Rocketseat</a> bootcamps. Based in Santa Cruz do Sul/Rio Grande do Sul, I'm a seasoned Frontend Web Developer proficient in React, TypeScript, Next.JS, PHP, and Laravel. <br /><br /> At <a href='https://meta.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Meta</a> since 2022, I currently lead the development of an AI chatbot, enhancing customer support through React, Tailwind CSS, Redux, and TypeScript. My previous roles involved contributing to a universal ERP software and leading the development of a payments platform, showcasing adaptability and leadership. <br /><br /> Before Meta, I served as a Junior Web Developer at <a href='https://webde.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Webde Tecnologia</a>, excelling in interface development using Next.JS, PHP, and Laravel. I kickstarted my career at <a href='https://www.nucleosistemas.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Nucleo IT</a>, installing BI systems and developing business websites. <br /><br /> Amidst this exciting journey, my girlfriend and our furry companion are my pillars of support. Their encouragement fuels my passion for web development, turning challenges into shared victories. Fluent in English, conversational in Spanish, and a native Portuguese speaker, I balance my tech passion with gaming, playing football, a lot of family time, and occasional adventures around Brazil. My journey reflects a commitment to learning and crafting user-centric web solutions in the ever-evolving tech landscape, with a great passion about UX."
+  },
   "experiences": {
+    "sectionTitle": "Experiências",
     "Meta": {
       "date": "07/2022 - Present",
       "company": "Meta",
@@ -36,7 +43,7 @@
       "date": "03/2019 - Present",
       "company": "Freelancer",
       "position": "Front End Developer",
-      "description": "Em minha jornada como desenvolvedor front-end freelancer, mergulhei em projetos diversos, dando vida a websites e interfaces de excelência. Minha abordagem envolve a aplicação de práticas inovadoras da indústria e a exploração das mais recentes tecnologias. Estabeleci uma conexão próxima com os clientes, assegurando que suas visões fossem traduzidas com maestria, resultando na entrega bem-sucedida de projetos dentro dos prazos estabelecidos e orçamentos acordados.",
+      "description": "In my journey as a freelance front-end developer, I have immersed myself in various projects, bringing exceptional websites and interfaces to life. My approach involves applying innovative industry practices and exploring the latest technologies. I have established a close connection with clients, ensuring that their visions are masterfully translated, resulting in successful project delivery within established timelines and agreed budgets.",
       "technologies": [
         "React",
         "Redux",
