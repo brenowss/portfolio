@@ -3,6 +3,7 @@ import { i18n } from "../../i18n-config";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,6 +29,7 @@ export default function Root({
       >
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
