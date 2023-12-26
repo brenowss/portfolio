@@ -2,8 +2,13 @@
 
 import { useContext, useEffect, useRef, useState } from 'react';
 import { NavigationContext } from '../../Provider';
+import { getDictionary } from '../../../../get-dictionary';
 
-export default function NavLinks() {
+interface NavigationProps {
+  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+}
+
+export default function NavLinks({ dictionary }: NavigationProps) {
   const { currentSection, setCurrentSection } = useContext(NavigationContext);
   const [ballPosition, setBallPosition] = useState(0);
   const ballRef = useRef<HTMLDivElement>(null);
@@ -41,24 +46,24 @@ export default function NavLinks() {
   }, [ballPosition]);
 
   return (
-    <div className="flex flex-col gap-4 relative">
+    <div className="flex flex-col gap-4 relative max-lg:hidden">
       <a
         onClick={() => handleNavigateToSection('about')}
-        className="text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
+        className="cursor-pointer text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
       >
-        About
+        {dictionary.components.navigation.about}
       </a>
       <a
         onClick={() => handleNavigateToSection('experience')}
-        className="text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
+        className="cursor-pointer text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
       >
-        Experience
+        {dictionary.components.navigation.experiences}
       </a>
       <a
         onClick={() => handleNavigateToSection('projects')}
-        className="text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
+        className="cursor-pointer text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
       >
-        Projects
+        {dictionary.components.navigation.projects}
       </a>
       <div
         ref={ballRef}

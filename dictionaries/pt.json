@@ -1,18 +1,21 @@
 {
+  "sections": {
+    "about": "Sobre",
+    "experiences": "Experiências",
+    "projects": "Projetos"
+  },
   "about": {
-    "sectionTitle": "About",
     "title": "Experienced Front End Engineer",
-    "motto": "I build exceptional and accessible digital experiences for the web.",
-    "text": "In 2023, I embarked on my Software Engineering degree at UNOPAR, complemented by courses at <a href='https://jstack.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>JStack</a> and <a href='https://rocketseat.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Rocketseat</a> bootcamps. Based in Santa Cruz do Sul/Rio Grande do Sul, I'm a seasoned Frontend Web Developer proficient in React, TypeScript, Next.JS, PHP, and Laravel. <br /><br /> At <a href='https://meta.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Meta</a> since 2022, I currently lead the development of an AI chatbot, enhancing customer support through React, Tailwind CSS, Redux, and TypeScript. My previous roles involved contributing to a universal ERP software and leading the development of a payments platform, showcasing adaptability and leadership. <br /><br /> Before Meta, I served as a Junior Web Developer at <a href='https://webde.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Webde Tecnologia</a>, excelling in interface development using Next.JS, PHP, and Laravel. I kickstarted my career at <a href='https://www.nucleosistemas.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Nucleo IT</a>, installing BI systems and developing business websites. <br /><br /> Amidst this exciting journey, my girlfriend and our furry companion are my pillars of support. Their encouragement fuels my passion for web development, turning challenges into shared victories. Fluent in English, conversational in Spanish, and a native Portuguese speaker, I balance my tech passion with gaming, playing football, a lot of family time, and occasional adventures around Brazil. My journey reflects a commitment to learning and crafting user-centric web solutions in the ever-evolving tech landscape, with a great passion about UX."
+    "motto": "Eu desenvolvo experiências digitais excepcionais e acessíveis para a web.",
+    "text": "Em 2023, iniciei meu curso de Engenharia de Software na UNOPAR, complementado por cursos na <a href='https://jstack.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>JStack</a> e nos bootcamps da <a href='https://rocketseat.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Rocketseat</a>. Com base em Santa Cruz do Sul, Rio Grande do Sul, sou um experiente Desenvolvedor Web Frontend proficientemente versado em React, TypeScript, Next.JS, PHP e Laravel. <br /><br /> Na <a href='https://meta.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Meta</a> desde 2022, atualmente lidero o desenvolvimento de um chatbot de IA, aprimorando o suporte ao cliente por meio de React, Tailwind CSS, Redux e TypeScript. Minhas funções anteriores envolveram contribuir para um software ERP universal e liderar o desenvolvimento de uma plataforma de pagamentos, demonstrando adaptabilidade e liderança. <br /><br /> Antes da Meta, atuei como Desenvolvedor Web Júnior na <a href='https://webde.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Webde Tecnologia</a>, destacando-me no desenvolvimento de interfaces usando Next.JS, PHP e Laravel. Iniciei minha carreira na <a href='https://www.nucleosistemas.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Nucleo IT</a>, instalando sistemas de BI e desenvolvendo sites empresariais. <br /><br /> Nessa jornada empolgante, minha namorada e nossa companheira peluda são meus pilares de apoio. O incentivo delas alimenta minha paixão pelo desenvolvimento web, transformando desafios em vitórias compartilhadas. Fluente em inglês, com habilidades de conversação em espanhol e falante nativo de português, equilibro minha paixão pela tecnologia com jogos, futebol, muito tempo em família e aventuras ocasionais pelo Brasil. Minha jornada reflete um compromisso com a aprendizagem e a criação de soluções web centradas no usuário no cenário tecnológico em constante evolução, com grande entusiasmo pela experiência do usuário (UX)."
   },
   "experiences": {
-    "sectionTitle": "Experiências",
     "Meta": {
-      "date": "07/2022 - Present",
+      "date": "07/2022 - Presente",
       "company": "Meta",
       "companyUrl": "https://www.meta.com.br/",
       "position": "Front End Developer",
-      "description": "Currently, I am part of the development of an innovative ERP software designed for internetbased companies that can be used universally, as well as a chat app, that uses AI to help the support team answer all the calls and messages from te clients. My focus on scalability, performance, and usability is reflected in my ability to design and implement new components and pages.\n\nAdditionally, I am committed to enhancing the user experience through cutting-edge ideas. I work alongside a diverse team of developers, testers, and DevOps using Scrum methodology to ensure seamless collaboration and high-quality solutions.",
+      "description": "Atualmente, faço parte do desenvolvimento de um software ERP inovador projetado para empresas baseadas na internet, que pode ser usado de forma universal, bem como de um aplicativo de chat que utiliza inteligência artificial para ajudar a equipe de suporte a responder todas as chamadas e mensagens dos clientes. Meu foco em escalabilidade, desempenho e usabilidade reflete-se na minha capacidade de projetar e implementar novos componentes e páginas.\n\nAlém disso, estou comprometido em aprimorar a experiência do usuário por meio de ideias de ponta. Trabalho ao lado de uma equipe diversificada de desenvolvedores, testadores e DevOps, utilizando a metodologia Scrum para garantir uma colaboração fluida e soluções de alta qualidade.",
       "technologies": [
         "React",
         "Redux",
@@ -29,7 +32,7 @@
       "company": "Webde",
       "companyUrl": "https://webde.com.br/",
       "position": "Front End Developer",
-      "description": "I have built an extensive track record in developing corporate and institutional websites and interfaces. I made critical decisions and implemented crucial improvements as part of the development team. Additionally, I specialized in restructuring legacy code and incorporating industry best practices into new projects. My proficiency in Next.js, PHP, and Laravel played a key role in creating several high-quality websites that meet the highest standards of quality and performance.",
+      "description": "Eu construí um extenso histórico no desenvolvimento de sites e interfaces corporativos e institucionais. Tomei decisões críticas e implementei melhorias essenciais como parte da equipe de desenvolvimento. Além disso, especializei-me na reestruturação de códigos legados e na incorporação das melhores práticas da indústria em novos projetos. Minha proficiência em Next.js, PHP e Laravel desempenhou um papel fundamental na criação de vários websites de alta qualidade que atendem aos mais altos padrões de qualidade e desempenho.",
       "technologies": [
         "React",
         "Redux",
@@ -40,10 +43,11 @@
       ]
     },
     "Freelancer": {
-      "date": "03/2019 - Present",
+      "date": "03/2019 - Presente",
       "company": "Freelancer",
+      "companyUrl": "https://www.linkedin.com/in/breno-fiorese/",
       "position": "Front End Developer",
-      "description": "In my journey as a freelance front-end developer, I have immersed myself in various projects, bringing exceptional websites and interfaces to life. My approach involves applying innovative industry practices and exploring the latest technologies. I have established a close connection with clients, ensuring that their visions are masterfully translated, resulting in successful project delivery within established timelines and agreed budgets.",
+      "description": "Em minha jornada como desenvolvedor front-end freelancer, mergulhei em diversos projetos, dando vida a sites e interfaces excepcionais. Minha abordagem envolve a aplicação de práticas inovadoras da indústria e a exploração das mais recentes tecnologias. Estabeleci uma conexão próxima com os clientes, garantindo que suas visões sejam traduzidas de maneira magistral, resultando na entrega bem-sucedida do projeto dentro dos prazos estabelecidos e dos orçamentos acordados.",
       "technologies": [
         "React",
         "Redux",
@@ -59,8 +63,55 @@
       "company": "Nucleo IT",
       "companyUrl": "https://nucleosistemas.com.br/",
       "position": "Front End Trainee",
-      "description": "As a developer intern, my contribution involved implementing BI systems for various companies. Additionally, I gained valuable experience in developing corporate websites for a variety of organizations throughout the state, including the creation of the company's own website. I also worked on the development of a web application for a local company, which involved the use of PHP, jQuery, Bootstrap, and MySQL.",
+      "description": "Como estagiário de desenvolvimento, minha contribuição envolveu a implementação de sistemas de BI para várias empresas. Além disso, adquiri uma experiência valiosa no desenvolvimento de sites corporativos para diversas organizações em todo o estado, incluindo a criação do site da própria empresa. Também participei do desenvolvimento de uma aplicação web para uma empresa local, que envolveu o uso de PHP, jQuery, Bootstrap e MySQL.",
       "technologies": ["React", "PHP", "jQuery", "Bootstrap", "MySQL"]
+    }
+  },
+  "projects": {
+    "MKBOT": {
+      "title": "MKBot",
+      "description": "MKBot é um chatbot que utiliza inteligência artificial para auxiliar a equipe de suporte a responder todas as chamadas e mensagens dos clientes. Ele está integrado ao WhatsApp, Facebook Messenger e Telegram. Além disso, possui um sistema completo de gestão e estatísticas.",
+      "url": "",
+      "technologies": [
+        "React",
+        "Redux",
+        "TypeScript",
+        "Tailwind CSS",
+        "Material UI",
+        "WebSocket",
+        "Scrum"
+      ]
+    },
+    "Caravaggio": {
+      "title": "Caravaggio",
+      "description": "Site criado para a Catedral de Caravaggio em Farroupilha, RS. Ele apresenta um sistema de gerenciamento de conteúdo onde é possível adicionar, editar e remover notícias, eventos, horários de missas, entre outras coisas, além de um espaço para transmitir ao vivo as missas e eventos da catedral.",
+      "url": "https://caravaggio.org.br/",
+      "technologies": ["React", "Next.js", "TypeScript", "SASS", "Vercel"]
+    },
+    "Esterili-med": {
+      "title": "Esterili-med",
+      "description": "Este site foi meticulosamente desenvolvido para a Esterili-Med, uma empresa líder na produção e distribuição de artigos descartáveis de alta qualidade para a área da saúde desde 1994. Localizada em Caxias do Sul-RS, o site apresenta animações e componentes intricados, tornando o processo de codificação desafiador, mas gratificante.",
+      "url": "https://esterili-med.com.br/",
+      "technologies": ["React", "Next.js", "TypeScript", "SASS", "Vercel"]
+    },
+    "HSFDA": {
+      "title": "Hospital São Francisco de Assis",
+      "description": "Este é o site oficial do Hospital São Francisco de Assis, um dos principais provedores de serviços de saúde em Parobé-RS. O site possui um sistema de gerenciamento de conteúdo que permite adicionar, editar e remover notícias, eventos, recém-nascidos e outras informações.",
+      "url": "https://www.hospitalparobe.com.br/",
+      "technologies": ["React", "Next.js", "TypeScript", "SASS", "Vercel"]
+    }
+  },
+  "components": {
+    "navigation": {
+      "about": "Sobre",
+      "experiences": "Experiências",
+      "projects": "Projetos"
+    },
+    "resume": {
+      "viewFull": "Ver currículo completo"
+    },
+    "footer": {
+      "inspiration": "Design inspirado por <a href='https://brittanychiang.com/' class='font-medium text-slate-500 hover:text-teal-300 focus-visible:text-teal-300' target='_blank' rel='noreferrer noopener' aria-label='Brittany Chiang (opens in a new tab)'>Brittany Chiang</a>"
     }
   }
 }

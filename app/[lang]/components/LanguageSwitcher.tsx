@@ -14,7 +14,7 @@ export const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex max-lg:absolute max-lg:-top-5 max-lg:-right-5">
       {i18n.locales.map((locale) => (
         <Link
           href={redirectedPathName(locale)}

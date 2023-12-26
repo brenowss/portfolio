@@ -1,12 +1,15 @@
 {
+  "sections": {
+    "about": "About",
+    "experiences": "Experiences",
+    "projects": "Projects"
+  },
   "about": {
-    "sectionTitle": "About",
     "title": "Experienced Front End Engineer",
     "motto": "I build exceptional and accessible digital experiences for the web.",
     "text": "In 2023, I embarked on my Software Engineering degree at UNOPAR, complemented by courses at <a href='https://jstack.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>JStack</a> and <a href='https://rocketseat.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Rocketseat</a> bootcamps. Based in Santa Cruz do Sul/Rio Grande do Sul, I'm a seasoned Frontend Web Developer proficient in React, TypeScript, Next.JS, PHP, and Laravel. <br /><br /> At <a href='https://meta.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Meta</a> since 2022, I currently lead the development of an AI chatbot, enhancing customer support through React, Tailwind CSS, Redux, and TypeScript. My previous roles involved contributing to a universal ERP software and leading the development of a payments platform, showcasing adaptability and leadership. <br /><br /> Before Meta, I served as a Junior Web Developer at <a href='https://webde.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Webde Tecnologia</a>, excelling in interface development using Next.JS, PHP, and Laravel. I kickstarted my career at <a href='https://www.nucleosistemas.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Nucleo IT</a>, installing BI systems and developing business websites. <br /><br /> Amidst this exciting journey, my girlfriend and our furry companion are my pillars of support. Their encouragement fuels my passion for web development, turning challenges into shared victories. Fluent in English, conversational in Spanish, and a native Portuguese speaker, I balance my tech passion with gaming, playing football, a lot of family time, and occasional adventures around Brazil. My journey reflects a commitment to learning and crafting user-centric web solutions in the ever-evolving tech landscape, with a great passion about UX."
   },
   "experiences": {
-    "sectionTitle": "Experiências",
     "Meta": {
       "date": "07/2022 - Present",
       "company": "Meta",
@@ -43,6 +46,7 @@
       "date": "03/2019 - Present",
       "company": "Freelancer",
       "position": "Front End Developer",
+      "companyUrl": "https://www.linkedin.com/in/breno-fiorese/",
       "description": "In my journey as a freelance front-end developer, I have immersed myself in various projects, bringing exceptional websites and interfaces to life. My approach involves applying innovative industry practices and exploring the latest technologies. I have established a close connection with clients, ensuring that their visions are masterfully translated, resulting in successful project delivery within established timelines and agreed budgets.",
       "technologies": [
         "React",
@@ -61,6 +65,53 @@
       "position": "Front End Trainee",
       "description": "As a developer intern, my contribution involved implementing BI systems for various companies. Additionally, I gained valuable experience in developing corporate websites for a variety of organizations throughout the state, including the creation of the company's own website. I also worked on the development of a web application for a local company, which involved the use of PHP, jQuery, Bootstrap, and MySQL.",
       "technologies": ["React", "PHP", "jQuery", "Bootstrap", "MySQL"]
+    }
+  },
+  "projects": {
+    "MKBOT": {
+      "title": "MKBot",
+      "description": "MKBot is a chatbot that uses AI to help the support team answer all the calls and messages from the clients. It is integrated with WhatsApp, Facebook Messenger, and Telegram. It also has a complete management and statistics system.",
+      "url": "",
+      "technologies": [
+        "React",
+        "Redux",
+        "TypeScript",
+        "Tailwind CSS",
+        "Material UI",
+        "WebSocket",
+        "Scrum"
+      ]
+    },
+    "Caravaggio": {
+      "title": "Caravaggio",
+      "description": "Website created for the Caravaggio Cathedral in Farroupilha, RS. It features a content management system where it is possible to add, edit, and remove news, events, Mass schedules, among other things, as well as a space to livestream the cathedral's Masses and events.",
+      "url": "https://caravaggio.org.br/",
+      "technologies": ["React", "Next.js", "TypeScript", "SASS", "Vercel"]
+    },
+    "Esterili-med": {
+      "title": "Esterili-med",
+      "description": "This website was meticulously developed for Esterili-Med, a leading company in the production and distribution of top-tier disposable healthcare items since 1994. Located in Caxias do Sul-RS, the site features intricate animations and components, making the coding process challenging yet rewarding. ",
+      "url": "https://esterili-med.com.br/",
+      "technologies": ["React", "Next.js", "TypeScript", "SASS", "Vercel"]
+    },
+    "HSFDA": {
+      "title": "Hospital São Francisco de Assis",
+      "description": "This is the official website of Hospital São Francisco de Assis, a leading healthcare provider in Parobé-RS. The site features a content management system where it is possible to add, edit, and remove news, events, new-born babies and other information.",
+      "url": "https://www.hospitalparobe.com.br/",
+      "technologies": ["React", "Next.js", "TypeScript", "SASS", "Vercel"]
+    }
+  },
+  "components": {
+    "navigation": {
+      "about": "About",
+      "experiences": "Experiences",
+      "projects": "Projects"
+    },
+    "resume": {
+      "viewFull": "View Full Résumé"
+    },
+    "footer": {
+      "inspiration": "Design inspired by <a href='https://brittanychiang.com/' class='font-medium text-slate-500 hover:text-teal-300 focus-visible:text-teal-300' target='_blank' rel='noreferrer noopener' aria-label='Brittany Chiang (opens in a new tab)'>Brittany Chiang</a>"
     }
   }
 }

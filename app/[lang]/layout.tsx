@@ -21,7 +21,7 @@ export default function Root({
     <html lang={params.lang}>
       <body
         className={clsx(
-          'bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-purple-800 selection:text-white',
+          'bg-slate-900 bg-gradient-radial from-slate-900 via-slate-800 to-gray-900 bg-no-repeat leading-relaxed text-slate-400 antialiased selection:bg-purple-800 selection:text-white',
           inter.className
         )}
       >
