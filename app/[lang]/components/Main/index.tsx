@@ -1,40 +1,40 @@
-'use client';
+"use client";
 
-import { useContext } from 'react';
-import { InView } from 'react-intersection-observer';
-import ExperienceCard from './ExperienceCard';
-import { getDictionary } from '../../../../get-dictionary';
-import { NavigationContext } from '../../Provider';
-import ProjectCard from './ProjectCard';
-import Caravaggio from './images/caravaggio.png';
-import EsteriliMed from './images/esterilimed.png';
-import HSFDA from './images/hsfda.png';
-import MKBot from './images/mkbot.png';
+import { useContext } from "react";
+import { InView } from "react-intersection-observer";
+import ExperienceCard from "./ExperienceCard";
+import { getDictionary } from "../../../../get-dictionary";
+import { NavigationContext } from "../../Provider";
+import ProjectCard from "./ProjectCard";
+import Caravaggio from "./images/caravaggio.png";
+import EsteriliMed from "./images/esterilimed.png";
+import HSFDA from "./images/hsfda.png";
+import MKBot from "./images/mkbot.png";
 
 interface MainProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>;
-  lang: 'pt' | 'en';
+  lang: "pt" | "en";
 }
 
 export default function Main({ dictionary, lang }: MainProps) {
   const { setCurrentSection } = useContext(NavigationContext);
 
-  const experiences = ['Meta', 'Freelancer', 'Webde', 'Nucleo'];
+  const experiences = ["Meta", "Freelancer", "Webde", "Nucleo"];
   const projects = [
     {
-      name: 'MKBOT',
+      name: "MKBOT",
       imageSrc: MKBot,
     },
     {
-      name: 'Caravaggio',
+      name: "Caravaggio",
       imageSrc: Caravaggio,
     },
     {
-      name: 'Esterili-med',
+      name: "Esterili-med",
       imageSrc: EsteriliMed,
     },
     {
-      name: 'HSFDA',
+      name: "HSFDA",
       imageSrc: HSFDA,
     },
   ];
@@ -45,7 +45,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         as="section"
         className="min-h-screen py-12 flex flex-col justify-center scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         id="about"
-        onChange={(inView) => inView && setCurrentSection('about')}
+        onChange={(inView) => inView && setCurrentSection("about")}
       >
         <h2 className="sticky top-0 font-medium z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.about}
@@ -57,7 +57,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         as="section"
         className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         id="experience"
-        onChange={(inView) => inView && setCurrentSection('experience')}
+        onChange={(inView) => inView && setCurrentSection("experience")}
       >
         <h2 className="sticky top-0 font-medium z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.experiences}
@@ -126,9 +126,9 @@ export default function Main({ dictionary, lang }: MainProps) {
               aria-hidden="true"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </span>
@@ -139,7 +139,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         as="section"
         className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         id="projects"
-        onChange={(inView) => inView && setCurrentSection('projects')}
+        onChange={(inView) => inView && setCurrentSection("projects")}
       >
         <h2 className="sticky top-0 font-medium z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.projects}
