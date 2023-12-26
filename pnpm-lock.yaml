@@ -8,6 +8,9 @@ dependencies:
   '@formatjs/intl-localematcher':
     specifier: 0.2.32
     version: 0.2.32
+  '@vercel/analytics':
+    specifier: ^1.1.1
+    version: 1.1.1
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
@@ -261,6 +264,12 @@ packages:
   /@types/scheduler@0.16.8:
     resolution: {integrity: sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==}
     dev: true
+
+  /@vercel/analytics@1.1.1:
+    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
+    dependencies:
+      server-only: 0.0.1
+    dev: false
 
   /ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
