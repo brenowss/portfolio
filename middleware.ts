@@ -1,10 +1,10 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-import { i18n } from './i18n-config';
+import { i18n } from "./i18n-config";
 
-import { match as matchLocale } from '@formatjs/intl-localematcher';
-import Negotiator from 'negotiator';
+import { match as matchLocale } from "@formatjs/intl-localematcher";
+import Negotiator from "negotiator";
 
 function getLocale(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -29,15 +29,15 @@ export function middleware(request: NextRequest) {
 
   if (
     [
-      '/manifest.json',
-      '/favicon.ico',
-      '/apple-touch-icon.png',
-      '/favicon_2x.ico',
-      '/favicon@2x.jpg',
-      '/og.jpg',
-      '/files/Breno_Fiorese(en).pdf',
-      '/files/Breno_Fiorese(pt).pdf',
-      '/images',
+      "/manifest.json",
+      "/favicon.ico",
+      "/apple-touch-icon.png",
+      "/favicon_2x.ico",
+      "/favicon@2x.jpg",
+      "/og.jpg",
+      "/files/Breno_Fiorese(en).docx",
+      "/files/Breno_Fiorese(pt).pdf",
+      "/images",
     ].includes(pathname)
   )
     return;
@@ -55,7 +55,7 @@ export function middleware(request: NextRequest) {
     // The new URL is now /en-US/products
     return NextResponse.redirect(
       new URL(
-        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
         request.url
       )
     );
@@ -65,6 +65,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|\\.pdf$|\\.png$).*)',
+    "/((?!api|_next/static|_next/image|favicon.ico|\\.pdf$|\\.png$).*)",
   ],
 };
