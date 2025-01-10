@@ -36,7 +36,7 @@ export function middleware(request: NextRequest) {
       "/favicon@2x.jpg",
       "/og.jpg",
       "/files/Breno_Fiorese(en).docx",
-      "/files/Breno_Fiorese(pt).pdf",
+      "/files/Breno_Fiorese(pt).docx",
       "/images",
     ].includes(pathname)
   )

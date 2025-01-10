@@ -19,16 +19,7 @@ interface MainProps {
 export default function Main({ dictionary, lang }: MainProps) {
   const { setCurrentSection } = useContext(NavigationContext);
 
-  const getResumeUrl = () => {
-    // provisory solution to get the resume url
-    if (lang === "pt") {
-      return "/files/Breno_Fiorese(pt).pdf";
-    }
-
-    return "/files/Breno_Fiorese(en).docx";
-  };
-
-  const experiences = ["Meta", "Freelancer", "Webde", "Nucleo"];
+  const experiences = ["Mobiauto", "Meta", "Freelancer", "Webde", "Nucleo"];
   const projects = [
     {
       name: "MKBOT",
@@ -119,7 +110,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         <a
           className="inline-flex items-center leading-tight font-semibold text-slate-200 group"
           aria-label="View Full Résumé"
-          href={getResumeUrl()}
+          href={`/files/Breno_Fiorese(${lang}).docx`}
           target="_blank"
           rel="noopener noreferrer"
         >
