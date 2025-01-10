@@ -10,6 +10,7 @@ import Caravaggio from "./images/caravaggio.png";
 import EsteriliMed from "./images/esterilimed.png";
 import HSFDA from "./images/hsfda.png";
 import MKBot from "./images/mkbot.png";
+import Fincheck from "./images/fincheck.png";
 
 interface MainProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>;
@@ -21,6 +22,10 @@ export default function Main({ dictionary, lang }: MainProps) {
 
   const experiences = ["Mobiauto", "Meta", "Freelancer", "Webde", "Nucleo"];
   const projects = [
+    {
+      name: "Fincheck",
+      imageSrc: Fincheck,
+    },
     {
       name: "MKBOT",
       imageSrc: MKBot,

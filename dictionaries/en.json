@@ -83,6 +83,19 @@
     }
   },
   "projects": {
+    "Fincheck": {
+      "title": "Fincheck",
+      "description": "Fincheck is a financial management platform that helps users keep track of their expenses, income, and investments. It provides a comprehensive overview of their financial health, allowing them to make informed decisions about their money. The platform also offers personalized recommendations and insights to help users achieve their financial goals.",
+      "url": "",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Radix UI",
+        "NestJS",
+        "PostgreSQL",
+        "Docker"
+      ]
+    },
     "MKBOT": {
       "title": "MKBot",
       "description": "MKBot is a chatbot that uses AI to help the support team answer all the calls and messages from the clients. It is integrated with WhatsApp, Facebook Messenger, and Telegram. It also has a complete management and statistics system.",
