@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import GithubIcon from "../../../../public/icons/github.svg";
-import InstagramIcon from "../../../../public/icons/instagram.svg";
-import LinkedInIcon from "../../../../public/icons/linkedin.svg";
-import EmailIcon from "../../../../public/icons/email.svg";
+import Image from 'next/image'
+import GithubIcon from '../../../../public/icons/github.svg'
+import InstagramIcon from '../../../../public/icons/instagram.svg'
+import LinkedInIcon from '../../../../public/icons/linkedin.svg'
+import EmailIcon from '../../../../public/icons/email.svg'
 
 interface SocialLinkProps {
-  href: string;
-  label: string;
-  iconSrc: string;
-  iconAlt: string;
+  href: string
+  label: string
+  iconSrc: string
+  iconAlt: string
 }
 
 const SocialLink: React.FC<SocialLinkProps> = ({
@@ -37,14 +37,14 @@ const SocialLink: React.FC<SocialLinkProps> = ({
         decoding="async"
       />
     </a>
-  );
-};
+  )
+}
 
 const EmailButton: React.FC = () => {
   const handleCopyToClipboard = () => {
-    const email = "brenofiorese01@gmail.com";
-    navigator.clipboard.writeText(email);
-  };
+    const email = 'brenofiorese01@gmail.com'
+    navigator.clipboard.writeText(email)
+  }
 
   return (
     <button
@@ -63,8 +63,8 @@ const EmailButton: React.FC = () => {
         decoding="async"
       />
     </button>
-  );
-};
+  )
+}
 
 export default function Socials() {
   return (
@@ -97,5 +97,5 @@ export default function Socials() {
         <EmailButton />
       </li>
     </ul>
-  );
+  )
 }

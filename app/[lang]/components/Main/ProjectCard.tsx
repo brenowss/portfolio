@@ -1,13 +1,13 @@
-import Image, { StaticImageData } from 'next/image';
-import React from 'react';
+import Image, { StaticImageData } from 'next/image'
+import React from 'react'
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
-  link: string;
-  technologies: string[];
-  imageSrc: StaticImageData;
-  imageAlt: string;
+  title: string
+  description: string
+  link: string
+  technologies: string[]
+  imageSrc: StaticImageData
+  imageAlt: string
 }
 
 export default function ProjectCard({
@@ -26,7 +26,7 @@ export default function ProjectCard({
           <h3>
             {link ? (
               <a
-                className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-purple-300 focus-visible:text-purple-300  group/link text-base"
+                className="group/link inline-flex items-baseline text-base font-medium leading-tight text-slate-200 hover:text-purple-300 focus-visible:text-purple-300"
                 href={link}
                 target="_blank"
                 rel="noreferrer noopener"
@@ -39,7 +39,7 @@ export default function ProjectCard({
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                    className="ml-1 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none"
                     aria-hidden="true"
                   >
                     <path
@@ -51,7 +51,7 @@ export default function ProjectCard({
                 </span>
               </a>
             ) : (
-              <span className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-purple-300 focus-visible:text-purple-300 text-base">
+              <span className="inline-flex items-baseline text-base font-medium leading-tight text-slate-200 hover:text-purple-300 focus-visible:text-purple-300">
                 <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                 <span className="inline-block">{title}</span>
               </span>
@@ -61,7 +61,7 @@ export default function ProjectCard({
           <div className="mt-2 flex flex-wrap" aria-label="Technologies used:">
             {technologies.map((technology, index) => (
               <div key={index} className="mr-1.5 mt-2">
-                <div className="flex items-center rounded-full bg-purple-400/10 px-3 py-1 text-xs font-medium leading-5 text-purple-300 ">
+                <div className="flex items-center rounded-full bg-purple-400/10 px-3 py-1 text-xs font-medium leading-5 text-purple-300">
                   {technology}
                 </div>
               </div>
@@ -79,5 +79,5 @@ export default function ProjectCard({
         />
       </div>
     </li>
-  );
+  )
 }

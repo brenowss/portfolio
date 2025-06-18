@@ -1,15 +1,15 @@
-import { LanguageSwitcher } from '../LanguageSwitcher';
-import NavLinks from './NavLinks';
-import { getDictionary } from '../../../../get-dictionary';
-import Socials from './Socials';
+import { LanguageSwitcher } from '../LanguageSwitcher'
+import NavLinks from './NavLinks'
+import { getDictionary } from '../../../../get-dictionary'
+import Socials from './Socials'
 
 interface NavigationProps {
-  dictionary: Awaited<ReturnType<typeof getDictionary>>;
+  dictionary: Awaited<ReturnType<typeof getDictionary>>
 }
 
 export default function Navigation({ dictionary }: NavigationProps) {
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 relative">
+    <header className="relative lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div>
         <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
           Breno Fiorese
@@ -28,5 +28,5 @@ export default function Navigation({ dictionary }: NavigationProps) {
         <Socials />
       </div>
     </header>
-  );
+  )
 }

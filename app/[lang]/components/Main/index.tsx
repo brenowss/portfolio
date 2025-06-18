@@ -1,58 +1,58 @@
-"use client";
+'use client'
 
-import { useContext } from "react";
-import { InView } from "react-intersection-observer";
-import ExperienceCard from "./ExperienceCard";
-import { getDictionary } from "../../../../get-dictionary";
-import { NavigationContext } from "../../Provider";
-import ProjectCard from "./ProjectCard";
-import Caravaggio from "./images/caravaggio.png";
-import EsteriliMed from "./images/esterilimed.png";
-import HSFDA from "./images/hsfda.png";
-import MKBot from "./images/mkbot.png";
-import Fincheck from "./images/fincheck.png";
+import { useContext } from 'react'
+import { InView } from 'react-intersection-observer'
+import ExperienceCard from './ExperienceCard'
+import { getDictionary } from '../../../../get-dictionary'
+import { NavigationContext } from '../../Provider'
+import ProjectCard from './ProjectCard'
+import Caravaggio from './images/caravaggio.png'
+import EsteriliMed from './images/esterilimed.png'
+import HSFDA from './images/hsfda.png'
+import MKBot from './images/mkbot.png'
+import Fincheck from './images/fincheck.png'
 
 interface MainProps {
-  dictionary: Awaited<ReturnType<typeof getDictionary>>;
-  lang: "pt" | "en";
+  dictionary: Awaited<ReturnType<typeof getDictionary>>
+  lang: 'pt' | 'en'
 }
 
 export default function Main({ dictionary, lang }: MainProps) {
-  const { setCurrentSection } = useContext(NavigationContext);
+  const { setCurrentSection } = useContext(NavigationContext)
 
-  const experiences = ["Mobiauto", "Meta", "Freelancer", "Webde", "Nucleo"];
+  const experiences = ['Mobiauto', 'Meta', 'Freelancer', 'Webde', 'Nucleo']
   const projects = [
     {
-      name: "Fincheck",
+      name: 'Fincheck',
       imageSrc: Fincheck,
     },
     {
-      name: "MKBOT",
+      name: 'MKBOT',
       imageSrc: MKBot,
     },
     {
-      name: "Caravaggio",
+      name: 'Caravaggio',
       imageSrc: Caravaggio,
     },
     {
-      name: "Esterili-med",
+      name: 'Esterili-med',
       imageSrc: EsteriliMed,
     },
     {
-      name: "HSFDA",
+      name: 'HSFDA',
       imageSrc: HSFDA,
     },
-  ];
+  ]
 
   return (
     <main className="lg:w-1/2 lg:pb-24">
       <InView
         as="section"
-        className="min-h-screen py-12 flex flex-col justify-center scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+        className="flex min-h-screen scroll-mt-16 flex-col justify-center py-12 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         id="about"
-        onChange={(inView) => inView && setCurrentSection("about")}
+        onChange={(inView) => inView && setCurrentSection('about')}
       >
-        <h2 className="sticky top-0 font-medium z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.about}
         </h2>
         <p dangerouslySetInnerHTML={{ __html: dictionary.about.text }} />
@@ -62,9 +62,9 @@ export default function Main({ dictionary, lang }: MainProps) {
         as="section"
         className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         id="experience"
-        onChange={(inView) => inView && setCurrentSection("experience")}
+        onChange={(inView) => inView && setCurrentSection('experience')}
       >
-        <h2 className="sticky top-0 font-medium z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.experiences}
         </h2>
 
@@ -113,7 +113,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         </ol>
 
         <a
-          className="inline-flex items-center leading-tight font-semibold text-slate-200 group"
+          className="group inline-flex items-center font-semibold leading-tight text-slate-200"
           aria-label="View Full Résumé"
           href={`/files/Breno_Fiorese(${lang}).docx`}
           target="_blank"
@@ -144,9 +144,9 @@ export default function Main({ dictionary, lang }: MainProps) {
         as="section"
         className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         id="projects"
-        onChange={(inView) => inView && setCurrentSection("projects")}
+        onChange={(inView) => inView && setCurrentSection('projects')}
       >
-        <h2 className="sticky top-0 font-medium z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.projects}
         </h2>
 
@@ -177,7 +177,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         </ul>
       </InView>
 
-      <footer className="max-w-md text-sm text-slate-600 sm:pb-0 opacity-75 hover:opacity-100 transition-opacity">
+      <footer className="max-w-md text-sm text-slate-600 opacity-75 transition-opacity hover:opacity-100 sm:pb-0">
         <p
           dangerouslySetInnerHTML={{
             __html: dictionary.components.footer.inspiration,
@@ -185,5 +185,5 @@ export default function Main({ dictionary, lang }: MainProps) {
         />
       </footer>
     </main>
-  );
+  )
 }

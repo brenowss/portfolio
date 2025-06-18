@@ -2,7 +2,8 @@
   "sections": {
     "about": "Sobre",
     "experiences": "Experiências",
-    "projects": "Projetos"
+    "projects": "Projetos",
+    "devlog": "Devlog"
   },
   "about": {
     "title": "Experienced Front End Engineer",
@@ -133,7 +134,8 @@
     "navigation": {
       "about": "Sobre",
       "experiences": "Experiências",
-      "projects": "Projetos"
+      "projects": "Projetos",
+      "devlog": "Devlog"
     },
     "resume": {
       "viewFull": "Ver currículo completo"

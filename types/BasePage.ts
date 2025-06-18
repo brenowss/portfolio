@@ -1,6 +1,6 @@
 export interface BasePage {
-  children?: React.ReactNode;
+  children?: React.ReactNode
   params: {
-    lang: string;
-  };
+    lang: string
+  }
 }

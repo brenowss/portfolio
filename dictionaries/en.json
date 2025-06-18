@@ -2,7 +2,8 @@
   "sections": {
     "about": "About",
     "experiences": "Experiences",
-    "projects": "Projects"
+    "projects": "Projects",
+    "devlog": "Devlog"
   },
   "about": {
     "title": "Experienced Front End Engineer",
@@ -133,7 +134,8 @@
     "navigation": {
       "about": "About",
       "experiences": "Experiences",
-      "projects": "Projects"
+      "projects": "Projects",
+      "devlog": "Devlog"
     },
     "resume": {
       "viewFull": "View Full Résumé"
