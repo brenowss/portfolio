@@ -6,12 +6,17 @@ import { getDictionary } from '../../../../get-dictionary'
 import Link from 'next/link'
 import Image from 'next/image'
 import ArrowIcon from '../../../../public/icons/arrow-up-right.svg'
+import clsx from 'clsx'
 
 interface NavigationProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
+  isHome?: boolean
 }
 
-export default function NavLinks({ dictionary }: NavigationProps) {
+export default function NavLinks({
+  dictionary,
+  isHome = true,
+}: NavigationProps) {
   const { currentSection } = useContext(NavigationContext)
   const [ballPosition, setBallPosition] = useState(0)
   const ballRef = useRef<HTMLDivElement>(null)
@@ -19,6 +24,7 @@ export default function NavLinks({ dictionary }: NavigationProps) {
   function handleNavigateToSection(
     section: 'about' | 'experience' | 'projects'
   ) {
+    if (!isHome) return
     const sectionElement = document.getElementById(section)
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: 'smooth' })
@@ -26,6 +32,7 @@ export default function NavLinks({ dictionary }: NavigationProps) {
   }
 
   useEffect(() => {
+    if (!isHome) return
     switch (currentSection) {
       case 'about':
         setBallPosition(6)
@@ -37,40 +44,73 @@ export default function NavLinks({ dictionary }: NavigationProps) {
         setBallPosition(94)
         break
     }
-  }, [currentSection])
+  }, [currentSection, isHome])
 
   useEffect(() => {
-    if (ballRef.current) {
-      ballRef.current.style.transition =
-        'top 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s ease-in-out'
-      ballRef.current.style.top = `${ballPosition}px`
-      ballRef.current.style.boxShadow = `0 0 10px rgba(255, 255, 255, 0.5)`
+    if (!isHome || !ballRef.current) return
+    ballRef.current.style.transition =
+      'top 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s ease-in-out'
+    ballRef.current.style.top = `${ballPosition}px`
+    ballRef.current.style.boxShadow = `0 0 10px rgba(255, 255, 255, 0.5)`
+  }, [ballPosition, isHome])
+
+  const renderNavItem = (
+    section: 'about' | 'experience' | 'projects',
+    text: string
+  ) => {
+    if (isHome) {
+      return (
+        <a
+          key={section}
+          onClick={(e) => {
+            e.preventDefault()
+            handleNavigateToSection(section)
+          }}
+          data-section={section}
+          className="cursor-pointer text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
+        >
+          {text}
+        </a>
+      )
     }
-  }, [ballPosition])
+
+    return (
+      <Link
+        key={section}
+        href="/"
+        className={clsx(
+          'cursor-pointer text-lg font-medium tracking-tight transition-all duration-300',
+          isHome
+            ? 'text-slate-200 hover:text-slate-100'
+            : 'hover:drop-shadow-glow text-slate-300 hover:text-white'
+        )}
+      >
+        {text}
+      </Link>
+    )
+  }
 
   return (
-    <div className="relative flex flex-col gap-4 max-lg:hidden">
-      <a
-        onClick={() => handleNavigateToSection('about')}
-        className="cursor-pointer text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
-      >
-        {dictionary.components.navigation.about}
-      </a>
-      <a
-        onClick={() => handleNavigateToSection('experience')}
-        className="cursor-pointer text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
-      >
-        {dictionary.components.navigation.experiences}
-      </a>
-      <a
-        onClick={() => handleNavigateToSection('projects')}
-        className="cursor-pointer text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
-      >
-        {dictionary.components.navigation.projects}
-      </a>
+    <div
+      className={clsx(
+        'relative flex gap-4',
+        isHome ? 'flex-col max-lg:hidden' : 'flex-row justify-center p-4'
+      )}
+    >
+      {renderNavItem('about', dictionary.components.navigation.about)}
+      {renderNavItem(
+        'experience',
+        dictionary.components.navigation.experiences
+      )}
+      {renderNavItem('projects', dictionary.components.navigation.projects)}
       <Link
         href="/devlog"
-        className="group flex cursor-pointer items-center text-lg font-medium tracking-tight text-slate-200 hover:text-slate-100"
+        className={clsx(
+          'group flex cursor-pointer items-center text-lg font-medium tracking-tight transition-all duration-300',
+          isHome
+            ? 'text-slate-200 hover:text-slate-100'
+            : 'hover:drop-shadow-glow text-slate-300 hover:text-white'
+        )}
       >
         {dictionary.components.navigation.devlog}
         <Image
@@ -78,14 +118,19 @@ export default function NavLinks({ dictionary }: NavigationProps) {
           alt="External link"
           height={18}
           width={18}
-          className="mt-1 opacity-10 transition-opacity group-hover:opacity-100"
+          className={clsx(
+            'ml-2 mt-1 opacity-10 transition-opacity duration-300 group-hover:opacity-100',
+            !isHome && 'hidden'
+          )}
         />
       </Link>
-      <div
-        ref={ballRef}
-        className="absolute -left-6 h-4 w-4 rounded-full bg-slate-200"
-        style={{ top: `${ballPosition}px` }}
-      ></div>
+      {isHome && (
+        <div
+          ref={ballRef}
+          className="absolute -left-6 h-4 w-4 rounded-full bg-slate-200"
+          style={{ top: `${ballPosition}px` }}
+        ></div>
+      )}
     </div>
   )
 }

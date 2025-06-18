@@ -130,6 +130,11 @@
       "technologies": ["React", "Next.js", "TypeScript", "SASS", "Vercel"]
     }
   },
+  "devlog": {
+    "title": "Devlog",
+    "subtitle": "Technical updates and insights about my personal projects",
+    "morePosts": "More posts"
+  },
   "components": {
     "navigation": {
       "about": "About",

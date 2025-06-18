@@ -1,10 +1,10 @@
 'use client'
 
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { InView } from 'react-intersection-observer'
 import ExperienceCard from './ExperienceCard'
 import { getDictionary } from '../../../../get-dictionary'
-import { NavigationContext } from '../../Provider'
+import { NavigationContext, CurrentSection } from '../../Provider'
 import ProjectCard from './ProjectCard'
 import Caravaggio from './images/caravaggio.png'
 import EsteriliMed from './images/esterilimed.png'
@@ -19,6 +19,13 @@ interface MainProps {
 
 export default function Main({ dictionary, lang }: MainProps) {
   const { setCurrentSection } = useContext(NavigationContext)
+
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '')
+    if (hash && ['about', 'experience', 'projects'].includes(hash)) {
+      setCurrentSection(hash as CurrentSection)
+    }
+  }, [setCurrentSection])
 
   const experiences = ['Mobiauto', 'Meta', 'Freelancer', 'Webde', 'Nucleo']
   const projects = [

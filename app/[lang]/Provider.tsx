@@ -6,12 +6,12 @@ interface PageProps {
   children: React.ReactNode
 }
 
+export type CurrentSection = 'about' | 'experience' | 'projects'
 export const NavigationContext = createContext({
   currentSection: 'about',
-  setCurrentSection: (section: 'about' | 'experience' | 'projects') => {},
+  setCurrentSection: (section: CurrentSection) => {},
 })
 
-export type CurrentSection = 'about' | 'experience' | 'projects'
 export default function Provider({ children }: PageProps) {
   const [currentSection, setCurrentSection] = useState<CurrentSection>('about')
 
