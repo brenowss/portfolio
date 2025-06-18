@@ -60,7 +60,7 @@ export default async function Page({ params }: BasePage) {
       </div>
 
       <div
-        className="prose prose-invert prose-p:text-slate-300 prose-h2:mt-10 prose-h2:text-slate-100 prose-li:marker:text-slate-500 prose-code:rounded prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 max-w-none"
+        className="prose prose-invert max-w-none prose-h2:mt-10 prose-h2:text-slate-100 prose-p:text-slate-300 prose-code:rounded prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-li:marker:text-slate-500"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
