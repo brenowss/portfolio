@@ -1,11 +1,18 @@
 import { BasePage } from '@customTypes/BasePage'
 import { getDictionary } from '../../../get-dictionary'
+import { createClient } from '../../../lib/supabase/server'
 import PostCard from '../components/PostCard'
 
 export default async function Page({ params }: BasePage) {
   const { lang } = await params
 
   const dictionary = await getDictionary(lang)
+
+  const supabase = await createClient()
+  const { data } = await supabase
+    .from('posts')
+    .select()
+    .order('published_at', { ascending: false })
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
@@ -16,16 +23,18 @@ export default async function Page({ params }: BasePage) {
         {dictionary.devlog.subtitle}
       </p>
 
-      <div className="pt-10">
-        <PostCard
-          variant="wide"
-          title="Como otimizei o carregamento do meu app Tauri em 40%"
-          excerpt="Compartilho as estratégias que utilizei para reduzir drasticamente o tempo de boot do Breakpoints no desktop."
-          coverImage="https://placehold.co/600x400.png"
-          href="/devlog/otimizacao-tauri"
-          projectBadge="Breakpoints"
-          extraBadges={['Tauri', 'Rust', 'Performance']}
-        />
+      <div className="flex w-full flex-col gap-4 pt-10">
+        {data?.map((post) => (
+          <PostCard
+            key={post.id}
+            variant="wide"
+            title={post.title}
+            excerpt={post.description}
+            coverImage={post.cover_image_url}
+            href={`/devlog/${post.slug}`}
+            badges={post.tags}
+          />
+        ))}
       </div>
     </div>
   )

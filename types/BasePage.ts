@@ -4,3 +4,9 @@ export interface BasePage {
     lang: 'pt' | 'en'
   }
 }
+
+export interface PageWithSlug extends BasePage {
+  params: BasePage['params'] & {
+    slug: string
+  }
+}

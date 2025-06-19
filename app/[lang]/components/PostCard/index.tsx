@@ -10,8 +10,7 @@ interface PostCardProps {
   excerpt: string
   coverImage: string
   href: string
-  projectBadge: string
-  extraBadges?: string[]
+  badges?: string[]
 }
 
 export default function PostCard({
@@ -20,8 +19,7 @@ export default function PostCard({
   excerpt,
   coverImage,
   href,
-  projectBadge,
-  extraBadges = [],
+  badges = [],
 }: PostCardProps) {
   const isWide = variant === 'wide'
 
@@ -64,12 +62,9 @@ export default function PostCard({
         <p className="line-clamp-3 text-sm text-slate-400">{excerpt}</p>
 
         <div className="flex flex-wrap gap-2">
-          <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300">
-            {projectBadge}
-          </span>
-          {extraBadges.map((badge, i) => (
+          {badges.map((badge) => (
             <span
-              key={i}
+              key={badge}
               className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-400"
             >
               {badge}
