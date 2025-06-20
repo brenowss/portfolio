@@ -3,6 +3,7 @@ import { BasePage } from '@customTypes/BasePage'
 import clsx from 'clsx'
 
 import { Outfit } from 'next/font/google'
+import { DOMAIN } from '../lib/constants'
 
 const outfitFont = Outfit({ subsets: ['latin'] })
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: 'Breno Fiorese - Software Engineer',
     type: 'website',
     locale: 'en_US',
-    url: 'https://brenofiorese.dev',
+    url: DOMAIN,
     images: [
       {
         url: '/og.jpg',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Breno Fiorese | Frontend Developer',
     description: 'Building high-quality web experiences.',
-    images: ['https://brenofiorese.dev/og.jpg'],
+    images: [`${DOMAIN}/og.jpg`],
   },
   icons: {
     apple: {

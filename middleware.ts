@@ -35,6 +35,8 @@ export function middleware(request: NextRequest) {
       '/favicon_2x.ico',
       '/favicon@2x.jpg',
       '/og.jpg',
+      '/sitemap.xml',
+      '/robots.txt',
       '/files/Breno_Fiorese(en).docx',
       '/files/Breno_Fiorese(pt).docx',
       '/images',

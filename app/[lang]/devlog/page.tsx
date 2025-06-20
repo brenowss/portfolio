@@ -1,6 +1,7 @@
 import { PageWithSlug } from '@customTypes/BasePage'
 import { Metadata } from 'next'
 import { getDictionary } from '../../../get-dictionary'
+import { DOMAIN } from '../../../lib/constants'
 import { createServerClient } from '../../../lib/supabase/server'
 import PostCard from '../components/PostCard'
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Devlog | Breno Fiorese',
     description:
       'Short posts about development, side projects, and technical insights.',
-    url: 'https://brenofiorese.dev',
+    url: DOMAIN,
     images: [
       {
         url: '/og.jpg',
@@ -36,10 +37,10 @@ export const metadata: Metadata = {
     title: 'Devlog | Breno Fiorese',
     description:
       "Real-time thoughts on code, projects, and things I'm learning along the way.",
-    images: ['https://brenofiorese.dev/og.jpg'],
+    images: [`${DOMAIN}/og.jpg`],
   },
   alternates: {
-    canonical: 'https://brenofiorese.dev/devlog',
+    canonical: `${DOMAIN}/devlog`,
   },
 }
 

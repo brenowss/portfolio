@@ -1,5 +1,6 @@
 import { BasePage, PageWithSlug } from '@customTypes/BasePage'
 import { Metadata, ResolvingMetadata } from 'next'
+import { DOMAIN } from '../../../../lib/constants'
 import { createClient } from '../../../../lib/supabase/client'
 
 export async function generateStaticParams() {
@@ -35,7 +36,7 @@ export async function generateMetadata(
       ],
     },
     alternates: {
-      canonical: `https://brenofiorese.dev/devlog/${slug}`,
+      canonical: `${DOMAIN}/devlog/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',
