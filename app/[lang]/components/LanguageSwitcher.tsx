@@ -23,7 +23,7 @@ export function LanguageSwitcher({ isHome }: LanguageSwitcherProps) {
       className={clsx(
         'flex gap-4',
         isHome
-          ? 'max-lg:absolute max-lg:-right-5 max-lg:-top-5'
+          ? 'max-lg:absolute max-lg:-top-5 max-lg:-right-5'
           : 'items-center'
       )}
     >

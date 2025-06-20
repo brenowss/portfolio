@@ -1,12 +1,16 @@
-export interface BasePage {
-  children?: React.ReactNode
-  params: {
-    lang: 'pt' | 'en'
-  }
+interface CommonParams {
+  lang: 'pt' | 'en'
 }
 
-export interface PageWithSlug extends BasePage {
-  params: BasePage['params'] & {
-    slug: string
-  }
+export interface BasePage {
+  children?: React.ReactNode
+  params: Promise<CommonParams>
+}
+
+export interface PageWithSlug {
+  params: Promise<
+    CommonParams & {
+      slug: string
+    }
+  >
 }

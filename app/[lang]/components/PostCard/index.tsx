@@ -3,8 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { ComponentProps } from 'react'
 
-interface PostCardProps {
+interface PostCardProps extends ComponentProps<'a'> {
   variant?: 'wide' | 'vertical'
   title: string
   excerpt: string
@@ -20,6 +21,8 @@ export default function PostCard({
   coverImage,
   href,
   badges = [],
+  className,
+  ...rest
 }: PostCardProps) {
   const isWide = variant === 'wide'
 
@@ -30,8 +33,10 @@ export default function PostCard({
         'hover:shadow-glow group relative flex overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 transition-all hover:border-slate-700',
         isWide
           ? 'flex-col gap-6 p-4 md:flex-row md:p-6'
-          : 'flex-col space-y-4 p-4'
+          : 'flex-col space-y-4 p-4',
+        className
       )}
+      {...rest}
     >
       <div
         className={clsx(

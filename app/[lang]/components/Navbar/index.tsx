@@ -50,7 +50,7 @@ export default function Navbar({ dictionary }: NavbarProps) {
 
       {/* Mobile Menu */}
       <div
-        className={`absolute left-0 right-0 top-full z-50 bg-slate-900/95 backdrop-blur-sm transition-all duration-300 md:hidden ${isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
+        className={`absolute top-full right-0 left-0 z-50 bg-slate-900/95 backdrop-blur-xs transition-all duration-300 md:hidden ${isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
       >
         <div className="flex flex-col items-center gap-4 p-6">
           <NavLinks dictionary={dictionary} isHome={false} />

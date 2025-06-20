@@ -60,7 +60,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         id="about"
         onChange={(inView) => inView && setCurrentSection('about')}
       >
-        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur-sm md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.about}
         </h2>
         <p dangerouslySetInnerHTML={{ __html: dictionary.about.text }} />
@@ -72,7 +72,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         id="experience"
         onChange={(inView) => inView && setCurrentSection('experience')}
       >
-        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur-sm md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.experiences}
         </h2>
 
@@ -121,7 +121,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         </ol>
 
         <a
-          className="group inline-flex items-center font-semibold leading-tight text-slate-200"
+          className="group inline-flex items-center leading-tight font-semibold text-slate-200"
           aria-label="View Full Résumé"
           href={`/files/Breno_Fiorese(${lang}).docx`}
           target="_blank"
@@ -154,7 +154,7 @@ export default function Main({ dictionary, lang }: MainProps) {
         id="projects"
         onChange={(inView) => inView && setCurrentSection('projects')}
       >
-        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur-sm md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.projects}
         </h2>
 
@@ -185,10 +185,10 @@ export default function Main({ dictionary, lang }: MainProps) {
         </ul>
       </InView>
 
-      <div className="fixed bottom-5 right-5 z-50 lg:hidden">
+      <div className="fixed right-5 bottom-5 z-50 lg:hidden">
         <Link
           href="/devlog"
-          className="rounded-full bg-zinc-800/80 px-4 py-1.5 text-zinc-200 shadow-[0_0_4px_1px_rgba(192,132,252,0.5)] backdrop-blur transition-all hover:bg-white hover:text-black"
+          className="rounded-full bg-zinc-800/80 px-4 py-1.5 text-zinc-200 shadow-[0_0_4px_1px_rgba(192,132,252,0.5)] backdrop-blur-sm transition-all hover:bg-white hover:text-black"
         >
           {dictionary.devlog.title}
         </Link>

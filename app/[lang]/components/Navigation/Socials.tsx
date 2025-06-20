@@ -68,7 +68,7 @@ const EmailButton: React.FC = () => {
 
 export default function Socials() {
   return (
-    <ul className="ml-1 mt-8 flex items-center" aria-label="Social media">
+    <ul className="mt-8 ml-1 flex items-center" aria-label="Social media">
       <li className="mr-5 text-xs">
         <SocialLink
           href="https://github.com/brenowss"

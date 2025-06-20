@@ -123,7 +123,7 @@ export default function NavLinks({
           height={18}
           width={18}
           className={clsx(
-            'ml-2 mt-1 opacity-10 transition-opacity duration-300 group-hover:opacity-100',
+            'mt-1 ml-2 opacity-10 transition-opacity duration-300 group-hover:opacity-100',
             !isHome && 'hidden'
           )}
         />

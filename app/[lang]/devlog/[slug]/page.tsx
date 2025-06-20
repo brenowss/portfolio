@@ -1,55 +1,12 @@
-import { PageWithSlug } from '@customTypes/BasePage'
 import { getDictionary } from '../../../../get-dictionary'
 import PostCard from '../../components/PostCard'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { createServerClient } from '../../../../lib/supabase/server'
 import { marked } from 'marked'
-import { Metadata, ResolvingMetadata } from 'next'
-import { createClient } from '../../../../lib/supabase/client'
+import { PageWithSlug } from '@customTypes/BasePage'
 
 export const revalidate = 86400
-
-export async function generateStaticParams() {
-  const supabase = createClient()
-  const { data: posts } = await supabase.from('posts').select('slug')
-  return posts?.map((p) => ({ slug: p.slug })) ?? []
-}
-
-export async function generateMetadata(
-  { params }: PageWithSlug,
-  parent: Promise<ResolvingMetadata>
-): Promise<Metadata> {
-  const { slug } = await params
-  const supabase = createClient()
-  const { data: post } = await supabase
-    .from('posts')
-    .select('title, excerpt, cover_image_url')
-    .eq('slug', slug)
-    .single()
-
-  if (!post) return {}
-
-  const parentMetadata = await parent
-  return {
-    title: post.title,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      images: [
-        post.cover_image_url,
-        ...(parentMetadata.openGraph?.images || []),
-      ],
-    },
-    alternates: {
-      canonical: `https://brenofiorese.dev/devlog/${slug}`,
-    },
-    twitter: {
-      card: 'summary_large_image',
-    },
-  }
-}
 
 export default async function Page({ params }: PageWithSlug) {
   const { lang, slug } = await params
@@ -75,8 +32,8 @@ export default async function Page({ params }: PageWithSlug) {
   const htmlContent = marked(postBySlug.content)
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-md px-6 py-12 md:px-12 md:py-20 lg:px-0">
-      <h1 className="mb-6 text-4xl font-bold leading-tight tracking-wide text-slate-100">
+    <div className="mx-auto min-h-screen max-w-(--breakpoint-md) px-6 py-12 md:px-12 md:py-20 lg:px-0">
+      <h1 className="animate-in fade-in-25 slide-in-from-top-10 mb-6 text-4xl leading-tight font-bold tracking-wide text-slate-100 duration-700">
         {postBySlug.title}
       </h1>
 
@@ -84,14 +41,14 @@ export default async function Page({ params }: PageWithSlug) {
         {postBySlug.badges?.map((badge: string, i: number) => (
           <span
             key={i}
-            className="rounded-full bg-slate-700 px-3 py-1 text-xs font-medium text-slate-400"
+            className={`animate-in fade-in-25 rounded-full bg-slate-700 px-3 py-1 text-xs font-medium text-slate-400 delay-${i * 100} duration-700`}
           >
             {badge}
           </span>
         ))}
       </div>
 
-      <div className="relative mb-12 aspect-video w-full overflow-hidden rounded-2xl">
+      <div className="animate-in fade-in-25 relative mb-12 aspect-video w-full overflow-hidden rounded-2xl delay-200 duration-700">
         <Image
           src={postBySlug.cover_image_url}
           alt={postBySlug.title}
@@ -101,17 +58,17 @@ export default async function Page({ params }: PageWithSlug) {
       </div>
 
       <div
-        className="prose prose-invert max-w-none prose-h1:text-3xl prose-h2:mt-10 prose-h2:text-slate-100 prose-p:text-slate-300 prose-code:rounded prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-li:marker:text-slate-500"
+        className="prose prose-invert prose-h1:text-3xl prose-h2:mt-10 prose-h2:text-slate-100 prose-p:text-slate-300 prose-code:rounded-sm prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-li:marker:text-slate-500 animate-in fade-in-25 slide-in-from-bottom-10 max-w-none delay-300 duration-700"
         dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
 
       <div className="mt-20 border-t border-slate-800 pt-10">
-        <h2 className="mb-6 text-2xl font-semibold text-slate-100">
+        <h2 className="animate-in fade-in-25 slide-in-from-left-10 mb-6 text-2xl font-semibold text-slate-100 duration-700">
           {dictionary.devlog.morePosts}
         </h2>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {recentPosts?.map((item) => (
+          {recentPosts?.map((item, i) => (
             <PostCard
               key={item.slug}
               variant="vertical"
@@ -120,6 +77,7 @@ export default async function Page({ params }: PageWithSlug) {
               coverImage={item.cover_image_url}
               href={`/devlog/${item.slug}`}
               badges={item.badges}
+              className={`animate-in fade-in-25 slide-in-from-bottom-10 delay-${i * 150} duration-700`}
             />
           ))}
         </div>
