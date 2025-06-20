@@ -24,6 +24,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Breno Fiorese | Frontend Developer',
+    description: 'Building high-quality web experiences.',
+    images: ['https://brenofiorese.dev/og.jpg'],
+  },
   icons: {
     apple: {
       url: '/apple-touch-icon.png',

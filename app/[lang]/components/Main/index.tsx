@@ -11,6 +11,7 @@ import EsteriliMed from './images/esterilimed.png'
 import HSFDA from './images/hsfda.png'
 import MKBot from './images/mkbot.png'
 import Fincheck from './images/fincheck.png'
+import Link from 'next/link'
 
 interface MainProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
@@ -183,6 +184,15 @@ export default function Main({ dictionary, lang }: MainProps) {
           ))}
         </ul>
       </InView>
+
+      <div className="fixed bottom-5 right-5 z-50 lg:hidden">
+        <Link
+          href="/devlog"
+          className="rounded-full bg-zinc-800/80 px-4 py-1.5 text-zinc-200 shadow-[0_0_4px_1px_rgba(192,132,252,0.5)] backdrop-blur transition-all hover:bg-white hover:text-black"
+        >
+          {dictionary.devlog.title}
+        </Link>
+      </div>
 
       <footer className="max-w-md text-sm text-slate-600 opacity-75 transition-opacity hover:opacity-100 sm:pb-0">
         <p

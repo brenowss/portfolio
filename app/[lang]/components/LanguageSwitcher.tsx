@@ -21,7 +21,7 @@ export function LanguageSwitcher({ isHome }: LanguageSwitcherProps) {
   return (
     <div
       className={clsx(
-        'flex',
+        'flex gap-4',
         isHome
           ? 'max-lg:absolute max-lg:-right-5 max-lg:-top-5'
           : 'items-center'
@@ -30,7 +30,7 @@ export function LanguageSwitcher({ isHome }: LanguageSwitcherProps) {
       {i18n.locales.map((locale) => (
         <Link
           href={redirectedPathName(locale)}
-          className="mr-4 uppercase"
+          className="uppercase"
           key={locale}
         >
           {locale}

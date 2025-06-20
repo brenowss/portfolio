@@ -1,25 +1,64 @@
+'use client'
+
 import { LanguageSwitcher } from '../LanguageSwitcher'
 import { getDictionary } from '../../../../get-dictionary'
 import NavLinks from '../Navigation/NavLinks'
 import Link from 'next/link'
+import { useState } from 'react'
 
 interface NavbarProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
 }
 
 export default function Navbar({ dictionary }: NavbarProps) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
-    <header className="flex items-center justify-between px-20">
-      <Link
-        href="/"
-        className="text-3xl font-bold tracking-tight text-slate-200"
+    <header className="relative px-5 md:px-20">
+      <div className="flex items-center justify-between py-4">
+        <Link
+          href="/"
+          className="text-3xl font-bold tracking-tight text-slate-200"
+        >
+          B
+        </Link>
+
+        <div className="hidden md:block">
+          <NavLinks dictionary={dictionary} isHome={false} />
+        </div>
+
+        <div className="hidden md:block">
+          <LanguageSwitcher isHome={false} />
+        </div>
+
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex flex-col gap-1.5 md:hidden"
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`h-0.5 w-6 bg-slate-200 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-y-2 rotate-45' : ''}`}
+          />
+          <span
+            className={`h-0.5 w-6 bg-slate-200 transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}
+          />
+          <span
+            className={`h-0.5 w-6 bg-slate-200 transition-transform duration-300 ${isMobileMenuOpen ? '-translate-y-2 -rotate-45' : ''}`}
+          />
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`absolute left-0 right-0 top-full z-50 bg-slate-900/95 backdrop-blur-sm transition-all duration-300 md:hidden ${isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
       >
-        B
-      </Link>
-
-      <NavLinks dictionary={dictionary} isHome={false} />
-
-      <LanguageSwitcher isHome={false} />
+        <div className="flex flex-col items-center gap-4 p-6">
+          <NavLinks dictionary={dictionary} isHome={false} />
+          <div className="mt-2">
+            <LanguageSwitcher isHome={false} />
+          </div>
+        </div>
+      </div>
     </header>
   )
 }

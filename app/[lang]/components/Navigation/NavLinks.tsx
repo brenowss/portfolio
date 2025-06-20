@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ArrowIcon from '../../../../public/icons/arrow-up-right.svg'
 import clsx from 'clsx'
+import NewBadge from '../NewBadge'
 
 interface NavigationProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
@@ -77,7 +78,7 @@ export default function NavLinks({
     return (
       <Link
         key={section}
-        href="/"
+        href={`/#${section}`}
         className={clsx(
           'cursor-pointer text-lg font-medium tracking-tight transition-all duration-300',
           isHome
@@ -94,7 +95,9 @@ export default function NavLinks({
     <div
       className={clsx(
         'relative flex gap-4',
-        isHome ? 'flex-col max-lg:hidden' : 'flex-row justify-center p-4'
+        isHome
+          ? 'flex-col max-lg:hidden'
+          : 'flex-col items-center gap-6 md:flex-row md:justify-center md:gap-4'
       )}
     >
       {renderNavItem('about', dictionary.components.navigation.about)}
@@ -106,12 +109,13 @@ export default function NavLinks({
       <Link
         href="/devlog"
         className={clsx(
-          'group flex cursor-pointer items-center text-lg font-medium tracking-tight transition-all duration-300',
+          'group relative flex cursor-pointer items-center text-lg font-medium tracking-tight transition-all duration-300',
           isHome
             ? 'text-slate-200 hover:text-slate-100'
             : 'hover:drop-shadow-glow text-slate-300 hover:text-white'
         )}
       >
+        {isHome && <NewBadge />}
         {dictionary.components.navigation.devlog}
         <Image
           src={ArrowIcon}
