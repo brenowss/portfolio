@@ -2,12 +2,14 @@ import { LanguageSwitcher } from '../LanguageSwitcher'
 import NavLinks from './NavLinks'
 import { getDictionary } from '../../../../get-dictionary'
 import Socials from './Socials'
+import { CommonParams } from '@customTypes/BasePage'
 
 interface NavigationProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
+  lang: CommonParams['lang']
 }
 
-export default function Navigation({ dictionary }: NavigationProps) {
+export default function Navigation({ dictionary, lang }: NavigationProps) {
   return (
     <header className="relative lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div>
@@ -20,7 +22,7 @@ export default function Navigation({ dictionary }: NavigationProps) {
         <p className="mt-4 max-w-xs leading-normal">{dictionary.about.motto}</p>
       </div>
 
-      <NavLinks dictionary={dictionary} />
+      <NavLinks dictionary={dictionary} lang={lang} />
 
       <div>
         <LanguageSwitcher />

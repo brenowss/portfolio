@@ -8,14 +8,17 @@ import Image from 'next/image'
 import ArrowIcon from '../../../../public/icons/arrow-up-right.svg'
 import clsx from 'clsx'
 import NewBadge from '../NewBadge'
+import { CommonParams } from '@customTypes/BasePage'
 
 interface NavigationProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
+  lang: CommonParams['lang']
   isHome?: boolean
 }
 
 export default function NavLinks({
   dictionary,
+  lang,
   isHome = true,
 }: NavigationProps) {
   const { currentSection } = useContext(NavigationContext)
@@ -78,7 +81,7 @@ export default function NavLinks({
     return (
       <Link
         key={section}
-        href={`/#${section}`}
+        href={`/${lang}/#${section}`}
         className={clsx(
           'cursor-pointer text-lg font-medium tracking-tight transition-all duration-300',
           isHome
@@ -107,7 +110,7 @@ export default function NavLinks({
       )}
       {renderNavItem('projects', dictionary.components.navigation.projects)}
       <Link
-        href="/devlog"
+        href={`/${lang}/devlog`}
         className={clsx(
           'group relative flex cursor-pointer items-center text-lg font-medium tracking-tight transition-all duration-300',
           isHome

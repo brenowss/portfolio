@@ -1,4 +1,4 @@
-interface CommonParams {
+export interface CommonParams {
   lang: 'pt' | 'en'
 }
 

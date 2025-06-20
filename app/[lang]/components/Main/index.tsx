@@ -12,10 +12,11 @@ import HSFDA from './images/hsfda.png'
 import MKBot from './images/mkbot.png'
 import Fincheck from './images/fincheck.png'
 import Link from 'next/link'
+import { CommonParams } from '@customTypes/BasePage'
 
 interface MainProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
-  lang: 'pt' | 'en'
+  lang: CommonParams['lang']
 }
 
 export default function Main({ dictionary, lang }: MainProps) {
@@ -187,7 +188,7 @@ export default function Main({ dictionary, lang }: MainProps) {
 
       <div className="fixed right-5 bottom-5 z-50 lg:hidden">
         <Link
-          href="/devlog"
+          href={`${lang}/devlog`}
           className="rounded-full bg-zinc-800/80 px-4 py-1.5 text-zinc-200 shadow-[0_0_4px_1px_rgba(192,132,252,0.5)] backdrop-blur-sm transition-all hover:bg-white hover:text-black"
         >
           {dictionary.devlog.title}

@@ -8,7 +8,7 @@ export default async function Layout({ children, params }: BasePage) {
 
   return (
     <div>
-      <Navbar dictionary={dictionary} />
+      <Navbar dictionary={dictionary} lang={lang} />
       {children}
     </div>
   )

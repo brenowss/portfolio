@@ -12,7 +12,7 @@ export default async function Page({ params }: PageWithSlug) {
     <Provider>
       <div className="mx-auto min-h-screen max-w-(--breakpoint-xl) px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
-          <Navigation dictionary={dictionary} />
+          <Navigation dictionary={dictionary} lang={lang} />
           <Main dictionary={dictionary} lang={lang} />
         </div>
       </div>

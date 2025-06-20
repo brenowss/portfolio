@@ -5,26 +5,28 @@ import { getDictionary } from '../../../../get-dictionary'
 import NavLinks from '../Navigation/NavLinks'
 import Link from 'next/link'
 import { useState } from 'react'
+import { CommonParams } from '@customTypes/BasePage'
 
 interface NavbarProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
+  lang: CommonParams['lang']
 }
 
-export default function Navbar({ dictionary }: NavbarProps) {
+export default function Navbar({ dictionary, lang }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
     <header className="relative px-5 md:px-20">
       <div className="flex items-center justify-between py-4">
         <Link
-          href="/"
+          href={`/${lang}`}
           className="text-3xl font-bold tracking-tight text-slate-200"
         >
           B
         </Link>
 
         <div className="hidden md:block">
-          <NavLinks dictionary={dictionary} isHome={false} />
+          <NavLinks dictionary={dictionary} lang={lang} isHome={false} />
         </div>
 
         <div className="hidden md:block">
@@ -53,7 +55,7 @@ export default function Navbar({ dictionary }: NavbarProps) {
         className={`absolute top-full right-0 left-0 z-50 bg-slate-900/95 backdrop-blur-xs transition-all duration-300 md:hidden ${isMobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
       >
         <div className="flex flex-col items-center gap-4 p-6">
-          <NavLinks dictionary={dictionary} isHome={false} />
+          <NavLinks dictionary={dictionary} lang={lang} isHome={false} />
           <div className="mt-2">
             <LanguageSwitcher isHome={false} />
           </div>

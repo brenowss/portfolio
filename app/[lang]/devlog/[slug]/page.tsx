@@ -106,7 +106,7 @@ export default async function Page({ params }: PageWithSlug) {
                 title={item.title}
                 excerpt={item.excerpt}
                 coverImage={item.cover_image_url}
-                href={`/devlog/${item.slug}`}
+                href={`/${lang}/devlog/${item.slug}`}
                 badges={item.badges}
                 className={`animate-in fade-in-25 slide-in-from-bottom-10 delay-${i * 150} duration-700`}
               />

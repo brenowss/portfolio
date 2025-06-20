@@ -10,6 +10,7 @@ const outfitFont = Outfit({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Breno Fiorese',
   description: 'Breno Fiorese - Software Engineer',
+  metadataBase: new URL(DOMAIN),
   openGraph: {
     title: 'Breno Fiorese',
     description: 'Breno Fiorese - Software Engineer',
