@@ -43,6 +43,6 @@ export async function generateMetadata(
   }
 }
 
-export default async function Root({ children }: BasePage) {
+export default async function Layout({ children }: BasePage) {
   return children
 }
