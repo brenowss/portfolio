@@ -1,10 +1,8 @@
-'use client'
-
 import Image from 'next/image'
 import GithubIcon from '../../../../public/icons/github.svg'
 import InstagramIcon from '../../../../public/icons/instagram.svg'
 import LinkedInIcon from '../../../../public/icons/linkedin.svg'
-import EmailIcon from '../../../../public/icons/email.svg'
+import { EmailButton } from './CopyToClipboard'
 
 interface SocialLinkProps {
   href: string
@@ -37,32 +35,6 @@ const SocialLink: React.FC<SocialLinkProps> = ({
         decoding="async"
       />
     </a>
-  )
-}
-
-const EmailButton: React.FC = () => {
-  const handleCopyToClipboard = () => {
-    const email = 'brenofiorese01@gmail.com'
-    navigator.clipboard.writeText(email)
-  }
-
-  return (
-    <button
-      className="block hover:text-slate-200"
-      onClick={handleCopyToClipboard}
-      aria-label="Copy email to clipboard"
-      title="Copy email to clipboard"
-    >
-      <span className="sr-only">Copy email to clipboard</span>
-      <Image
-        src={EmailIcon}
-        alt="Email"
-        width="20"
-        height="20"
-        loading="lazy"
-        decoding="async"
-      />
-    </button>
   )
 }
 

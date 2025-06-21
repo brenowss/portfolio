@@ -67,7 +67,7 @@ export default function PostCard({
         <p className="line-clamp-3 text-sm text-slate-400">{excerpt}</p>
 
         <div className="flex flex-wrap gap-2">
-          {badges.map((badge) => (
+          {badges?.map((badge) => (
             <span
               key={badge}
               className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-400"

@@ -4,6 +4,7 @@ import clsx from 'clsx'
 
 import { Outfit } from 'next/font/google'
 import { DOMAIN } from '../lib/constants'
+import Provider from './[lang]/Provider'
 
 const outfitFont = Outfit({ subsets: ['latin'] })
 
@@ -53,7 +54,7 @@ export default async function RootLayout({ children, params }: BasePage) {
           outfitFont.className
         )}
       >
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   )

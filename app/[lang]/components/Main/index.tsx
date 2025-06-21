@@ -1,10 +1,6 @@
-'use client'
-
-import { useContext, useEffect } from 'react'
 import { InView } from 'react-intersection-observer'
 import ExperienceCard from './ExperienceCard'
 import { getDictionary } from '../../../../get-dictionary'
-import { NavigationContext, CurrentSection } from '../../Provider'
 import ProjectCard from './ProjectCard'
 import Caravaggio from './images/caravaggio.png'
 import EsteriliMed from './images/esterilimed.png'
@@ -13,6 +9,8 @@ import MKBot from './images/mkbot.png'
 import Fincheck from './images/fincheck.png'
 import Link from 'next/link'
 import { CommonParams } from '@customTypes/BasePage'
+import SectionInitializer from './SectionInitializer'
+import InViewTracker from './InViewTracker'
 
 interface MainProps {
   dictionary: Awaited<ReturnType<typeof getDictionary>>
@@ -20,15 +18,6 @@ interface MainProps {
 }
 
 export default function Main({ dictionary, lang }: MainProps) {
-  const { setCurrentSection } = useContext(NavigationContext)
-
-  useEffect(() => {
-    const hash = window.location.hash.replace('#', '')
-    if (hash && ['about', 'experience', 'projects'].includes(hash)) {
-      setCurrentSection(hash as CurrentSection)
-    }
-  }, [setCurrentSection])
-
   const experiences = ['Mobiauto', 'Meta', 'Freelancer', 'Webde', 'Nucleo']
   const projects = [
     {
@@ -55,23 +44,20 @@ export default function Main({ dictionary, lang }: MainProps) {
 
   return (
     <main className="lg:w-1/2 lg:pb-24">
-      <InView
-        as="section"
-        className="flex min-h-screen scroll-mt-16 flex-col justify-center py-12 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+      <SectionInitializer />
+      <InViewTracker
         id="about"
-        onChange={(inView) => inView && setCurrentSection('about')}
+        className="flex min-h-screen scroll-mt-16 flex-col justify-center py-12 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       >
         <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur-sm md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.about}
         </h2>
         <p dangerouslySetInnerHTML={{ __html: dictionary.about.text }} />
-      </InView>
+      </InViewTracker>
 
-      <InView
-        as="section"
-        className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+      <InViewTracker
         id="experience"
-        onChange={(inView) => inView && setCurrentSection('experience')}
+        className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       >
         <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur-sm md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.experiences}
@@ -147,13 +133,11 @@ export default function Main({ dictionary, lang }: MainProps) {
             </svg>
           </span>
         </a>
-      </InView>
+      </InViewTracker>
 
-      <InView
-        as="section"
-        className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+      <InViewTracker
         id="projects"
-        onChange={(inView) => inView && setCurrentSection('projects')}
+        className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       >
         <h2 className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 font-medium backdrop-blur-sm md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           {dictionary.sections.projects}
@@ -184,7 +168,7 @@ export default function Main({ dictionary, lang }: MainProps) {
             />
           ))}
         </ul>
-      </InView>
+      </InViewTracker>
 
       <div className="fixed right-5 bottom-5 z-50 lg:hidden">
         <Link
