@@ -15,19 +15,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async headers() {
-    return [
-      {
-        source: '/sitemap.xml',
-        headers: [
-          {
-            key: 'X-Content-Type-Options',
-            value: 'application/xml',
-          },
-        ],
-      },
-    ]
-  },
 }
 
 export default nextConfig

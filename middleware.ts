@@ -35,7 +35,6 @@ export function middleware(request: NextRequest) {
       '/favicon_2x.ico',
       '/favicon@2x.jpg',
       '/og.jpg',
-      '/sitemap.xml',
       '/robots.txt',
       '/files/Breno_Fiorese(en).docx',
       '/files/Breno_Fiorese(pt).docx',
@@ -43,6 +42,15 @@ export function middleware(request: NextRequest) {
     ].includes(pathname)
   )
     return
+
+  if (pathname === '/sitemap.xml') {
+    const newHeaders = new Headers(request.headers)
+    newHeaders.set('content-type', 'application/xml')
+    newHeaders.set('Content-Type', 'application/xml')
+    return NextResponse.next({
+      headers: newHeaders,
+    })
+  }
 
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.every(
