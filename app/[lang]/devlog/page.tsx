@@ -1,4 +1,5 @@
 import { PageWithSlug } from '@customTypes/BasePage'
+import { PostTranslations } from '@customTypes/Queries'
 import { Metadata } from 'next'
 import { getDictionary } from '../../../get-dictionary'
 import { DOMAIN } from '../../../lib/constants'
@@ -51,9 +52,25 @@ export default async function Page({ params }: PageWithSlug) {
 
   const supabase = await createServerClient()
   const { data } = await supabase
-    .from('posts')
-    .select()
-    .order('published_at', { ascending: false })
+    .from('post_translations')
+    .select(
+      `
+    id,
+    post_id,
+    title,
+    description,
+    slug,
+    lang,
+    posts (
+      cover_image_url,
+      tags,
+      published_at
+    )
+  `
+    )
+    .eq('lang', lang)
+    .order('published_at', { referencedTable: 'posts', ascending: false })
+    .overrideTypes<Array<PostTranslations>, { merge: false }>()
 
   return (
     <div className="mx-auto min-h-screen max-w-(--breakpoint-xl) px-6 py-12 md:px-12 md:py-20 lg:px-24">
@@ -70,10 +87,10 @@ export default async function Page({ params }: PageWithSlug) {
             key={post.id}
             variant="wide"
             title={post.title}
-            excerpt={post.description}
-            coverImage={post.cover_image_url}
+            description={post.description}
+            coverImage={post.posts.cover_image_url}
             href={`/${lang}/devlog/${post.slug}`}
-            badges={post.badges}
+            badges={post.posts.tags}
             className={`animate-in fade-in-25 slide-in-from-bottom-10 delay-${i * 100} duration-700`}
           />
         ))}

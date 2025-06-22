@@ -1,12 +1,26 @@
+import { PostTranslations } from '@customTypes/Queries'
 import type { MetadataRoute } from 'next'
 import { DOMAIN } from '../lib/constants'
 import { createClient } from '../lib/supabase/client'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createClient()
-  const { data: posts } = await supabase
-    .from('posts')
-    .select('slug, published_at')
+
+  const { data: posts, error } = await supabase
+    .from('post_translations')
+    .select(
+      `
+      slug,
+      lang,
+      posts (
+        published_at
+      )
+    `
+    )
+    .eq('lang', 'pt')
+    .overrideTypes<Array<PostTranslations>, { merge: false }>()
+
+  if (error) throw new Error(`Erro ao buscar posts: ${error.message}`)
 
   const staticRoutes = [
     { path: '', priority: 1.0 },
@@ -31,8 +45,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   if (posts) {
     for (const post of posts) {
-      const lastMod = post.published_at
-        ? new Date(post.published_at)
+      const lastMod = post.posts?.published_at
+        ? new Date(post.posts.published_at)
         : new Date()
       routes.push({
         url: `${DOMAIN}/pt/devlog/${post.slug}`,

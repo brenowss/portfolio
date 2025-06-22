@@ -19,7 +19,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({
 }) => {
   return (
     <a
-      className="block hover:text-slate-200"
+      className="block hover:text-slate-300"
       href={href}
       target="_blank"
       rel="noreferrer noopener"

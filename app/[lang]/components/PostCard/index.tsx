@@ -8,7 +8,7 @@ import { ComponentProps } from 'react'
 interface PostCardProps extends ComponentProps<'a'> {
   variant?: 'wide' | 'vertical'
   title: string
-  excerpt: string
+  description: string
   coverImage: string
   href: string
   badges?: string[]
@@ -17,7 +17,7 @@ interface PostCardProps extends ComponentProps<'a'> {
 export default function PostCard({
   variant = 'wide',
   title,
-  excerpt,
+  description,
   coverImage,
   href,
   badges = [],
@@ -64,7 +64,7 @@ export default function PostCard({
           {title}
         </h3>
 
-        <p className="line-clamp-3 text-sm text-slate-400">{excerpt}</p>
+        <p className="line-clamp-3 text-sm text-slate-400">{description}</p>
 
         <div className="flex flex-wrap gap-2">
           {badges?.map((badge) => (

@@ -7,6 +7,7 @@ import { marked } from 'marked'
 import { PageWithSlug } from '@customTypes/BasePage'
 import { DOMAIN } from '../../../../lib/constants'
 import type { BlogPosting, WithContext } from 'schema-dts'
+import { PostTranslations } from '@customTypes/Queries'
 
 export const revalidate = 86400
 
@@ -17,19 +18,53 @@ export default async function Page({ params }: PageWithSlug) {
   const supabase = await createServerClient()
 
   const { data: postBySlug, error } = await supabase
-    .from('posts')
-    .select('*')
+    .from('post_translations')
+    .select(
+      `
+      id,
+      post_id,
+      title,
+      description,
+      content,
+      slug,
+      lang,
+      posts (
+        cover_image_url,
+        tags,
+        published_at
+        )
+      `
+    )
     .eq('slug', slug)
+    .eq('lang', lang)
+    .limit(1)
     .single()
+    .overrideTypes<PostTranslations, { merge: false }>()
 
   if (!postBySlug || error) return notFound()
 
   const { data: recentPosts } = await supabase
-    .from('posts')
-    .select('*')
+    .from('post_translations')
+    .select(
+      `
+    id,
+    post_id,
+    title,
+    description,
+    slug,
+    lang,
+    posts (
+      cover_image_url,
+      tags,
+      published_at
+    )
+  `
+    )
+    .eq('lang', lang)
     .neq('slug', slug)
-    .order('published_at', { ascending: false })
+    .order('published_at', { referencedTable: 'posts', ascending: false })
     .limit(2)
+    .overrideTypes<Array<PostTranslations>, { merge: false }>()
 
   const htmlContent = marked(postBySlug.content)
 
@@ -38,8 +73,8 @@ export default async function Page({ params }: PageWithSlug) {
     '@type': 'BlogPosting',
     headline: postBySlug.title,
     description: postBySlug.description,
-    datePublished: postBySlug.published_at,
-    dateModified: postBySlug.updated_at || postBySlug.published_at,
+    datePublished: postBySlug.posts.published_at,
+    dateModified: postBySlug.posts.published_at,
     author: {
       '@type': 'Person',
       name: 'Breno Fiorese',
@@ -53,7 +88,7 @@ export default async function Page({ params }: PageWithSlug) {
         url: `${DOMAIN}/og.jpg`,
       },
     },
-    image: postBySlug.coverImage,
+    image: postBySlug.posts.cover_image_url,
     url: `${DOMAIN}/${lang}/devlog/${postBySlug.slug}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -69,7 +104,7 @@ export default async function Page({ params }: PageWithSlug) {
         </h1>
 
         <div className="mb-8 flex flex-wrap items-center gap-2">
-          {postBySlug.badges?.map((badge: string, i: number) => (
+          {postBySlug.posts.tags?.map((badge: string, i: number) => (
             <span
               key={i}
               className={`animate-in fade-in-25 rounded-full bg-slate-700 px-3 py-1 text-xs font-medium text-slate-400 delay-${i * 100} duration-700`}
@@ -81,7 +116,7 @@ export default async function Page({ params }: PageWithSlug) {
 
         <div className="animate-in fade-in-25 relative mb-12 aspect-video w-full overflow-hidden rounded-2xl delay-200 duration-700">
           <Image
-            src={postBySlug.cover_image_url}
+            src={postBySlug.posts.cover_image_url}
             alt={postBySlug.title}
             fill
             className="object-cover"
@@ -104,10 +139,10 @@ export default async function Page({ params }: PageWithSlug) {
                 key={item.slug}
                 variant="vertical"
                 title={item.title}
-                excerpt={item.excerpt}
-                coverImage={item.cover_image_url}
+                description={item.description}
+                coverImage={item.posts.cover_image_url}
                 href={`/${lang}/devlog/${item.slug}`}
-                badges={item.badges}
+                badges={item.posts.tags}
                 className={`animate-in fade-in-25 slide-in-from-bottom-10 delay-${i * 150} duration-700`}
               />
             ))}

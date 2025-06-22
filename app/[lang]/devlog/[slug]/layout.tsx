@@ -1,11 +1,20 @@
 import { BasePage, PageWithSlug } from '@customTypes/BasePage'
+import { PostTranslations } from '@customTypes/Queries'
 import { Metadata, ResolvingMetadata } from 'next'
 import { DOMAIN } from '../../../../lib/constants'
 import { createClient } from '../../../../lib/supabase/client'
 
+// Gerar os slugs de todos os posts em português
 export async function generateStaticParams() {
   const supabase = createClient()
-  const { data: posts } = await supabase.from('posts').select('slug')
+  const { data: posts, error } = await supabase
+    .from('post_translations')
+    .select('slug')
+    .eq('lang', 'pt')
+    .overrideTypes<Array<PostTranslations>, { merge: false }>()
+
+  if (error) throw new Error(`Erro ao buscar slugs: ${error.message}`)
+
   return posts?.map((p) => ({ slug: p.slug })) ?? []
 }
 
@@ -13,25 +22,38 @@ export async function generateMetadata(
   { params }: PageWithSlug,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { slug } = await params
   const supabase = createClient()
-  const { data: post } = await supabase
-    .from('posts')
-    .select('title, excerpt, cover_image_url')
-    .eq('slug', slug)
-    .single()
+  const { slug } = await params
 
-  if (!post) return {}
+  const { data: post, error } = await supabase
+    .from('post_translations')
+    .select(
+      `
+      title,
+      description,
+      slug,
+      posts (
+        cover_image_url
+      )
+    `
+    )
+    .eq('slug', slug)
+    .eq('lang', 'pt')
+    .single()
+    .overrideTypes<PostTranslations, { merge: false }>()
+
+  if (error || !post) return {}
 
   const parentMetadata = await parent
+
   return {
     title: post.title,
-    description: post.excerpt,
+    description: post.description,
     openGraph: {
       title: post.title,
-      description: post.excerpt,
+      description: post.description,
       images: [
-        post.cover_image_url,
+        post.posts?.cover_image_url ?? '',
         ...(parentMetadata.openGraph?.images || []),
       ],
     },
