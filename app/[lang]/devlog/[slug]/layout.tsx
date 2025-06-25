@@ -23,7 +23,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const supabase = createClient()
-  const { slug } = await params
+  const { slug, lang } = await params
 
   const { data: post, error } = await supabase
     .from('post_translations')
@@ -58,7 +58,12 @@ export async function generateMetadata(
       ],
     },
     alternates: {
-      canonical: `${DOMAIN}/devlog/${slug}`,
+      canonical: `${DOMAIN}/${lang}/devlog/${slug}`,
+      languages: {
+        'x-default': `${DOMAIN}/pt/devlog/${slug}`,
+        pt: `${DOMAIN}/pt/devlog/${slug}`,
+        en: `${DOMAIN}/en/devlog/${slug}`,
+      },
     },
     twitter: {
       card: 'summary_large_image',
