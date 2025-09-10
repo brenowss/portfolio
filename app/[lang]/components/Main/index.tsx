@@ -1,4 +1,3 @@
-import { InView } from 'react-intersection-observer'
 import ExperienceCard from './ExperienceCard'
 import { getDictionary } from '../../../../get-dictionary'
 import ProjectCard from './ProjectCard'
@@ -18,7 +17,14 @@ interface MainProps {
 }
 
 export default function Main({ dictionary, lang }: MainProps) {
-  const experiences = ['Mobiauto', 'Meta', 'Freelancer', 'Webde', 'Nucleo']
+  const experiences = [
+    'Foodiary',
+    'Mobiauto',
+    'Meta',
+    'Freelancer',
+    'Webde',
+    'Nucleo',
+  ]
   const projects = [
     {
       name: 'Fincheck',

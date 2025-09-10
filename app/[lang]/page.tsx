@@ -5,18 +5,20 @@ import { PageWithSlug } from '@customTypes/BasePage'
 import { DOMAIN } from '../../lib/constants'
 import { Metadata } from 'next'
 
-export async function generateMetadata(
-  { params }: PageWithSlug
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageWithSlug): Promise<Metadata> {
   const { lang } = await params
 
   return {
-    title: lang === 'pt'
-      ? 'Breno Fiorese — Desenvolvedor & Criador de Coisas Digitais'
-      : 'Breno Fiorese — Developer & Digital Maker',
-    description: lang === 'pt'
-      ? 'Portfólio, devlog e experimentos em código, design e tecnologias do dia a dia.'
-      : 'Portfolio, devlog, and experiments in code, design, and everyday technology.',
+    title:
+      lang === 'pt'
+        ? 'Breno Fiorese — Desenvolvedor & Criador de Coisas Digitais'
+        : 'Breno Fiorese — Developer & Digital Maker',
+    description:
+      lang === 'pt'
+        ? 'Portfólio, devlog e experimentos em código, design e tecnologias do dia a dia.'
+        : 'Portfolio, devlog, and experiments in code, design, and everyday technology.',
     alternates: {
       canonical: `${DOMAIN}/${lang}/`,
       languages: {

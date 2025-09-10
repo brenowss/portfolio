@@ -11,6 +11,21 @@
     "text": "In 2023, I started my Software Engineering degree at UNOPAR, complemented by courses from <a href='https://jstack.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>JStack</a> and bootcamps from <a href='https://rocketseat.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Rocketseat</a>. Based in Santa Cruz do Sul, Rio Grande do Sul, I am an experienced Frontend Web Developer proficient in React, TypeScript, Next.js, PHP, and Laravel. <br /><br /> Currently, at <a href='https://www.mobiauto.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Mobiauto</a>, I am focused on developing an ERP tool aimed at improving the after-sales process for dealerships and resellers. My work involves creating intuitive interfaces and efficient components that enhance the user experience, collaborating with a multidisciplinary team to ensure a scalable and high-performing product. <br /><br /> Previously, at <a href='https://meta.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Meta</a>, I led the development of an AI chatbot, enhancing customer support through React, Tailwind CSS, Redux, and TypeScript. My earlier roles included contributing to a universal ERP software and leading the development of a payment platform, showcasing adaptability and leadership. <br /><br /> Before Meta, I worked as a Junior Web Developer at <a href='https://webde.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Webde Tecnologia</a>, excelling in interface development using Next.js, PHP, and Laravel. I began my career at <a href='https://www.nucleosistemas.com.br/' target='_blank' class='font-medium text-slate-200 hover:text-purple-300 focus-visible:text-purple-300'>Nucleo IT</a>, installing BI systems and developing corporate websites. <br /><br /> Throughout this exciting journey, my girlfriend and our furry companion are my pillars of support. Their encouragement fuels my passion for web development, turning challenges into shared victories. Fluent in English, conversational in Spanish, and a native Portuguese speaker, I balance my passion for technology with gaming, football, quality family time, and occasional adventures across Brazil. My journey reflects a commitment to learning and creating user-centered web solutions in the ever-evolving tech landscape, with a strong enthusiasm for user experience (UX)."
   },
   "experiences": {
+    "Foodiary": {
+      "date": "08/2025 - Present",
+      "company": "Foodiary",
+      "companyUrl": "https://www.foodiaryai.com/",
+      "position": "Founder & Developer",
+      "description": "I created Foodiary, a mobile nutrition app that uses AI to simplify meal logging. Built with React Native (Expo) and a serverless cloud API, with the entire interface design crafted by me. I'm responsible for the full product lifecycle, from ideation to strategy.",
+      "technologies": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Node.js",
+        "AWS",
+        "Serverless"
+      ]
+    },
     "Mobiauto": {
       "date": "04/2024 - Present",
       "company": "Mobiauto",
