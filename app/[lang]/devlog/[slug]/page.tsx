@@ -11,7 +11,8 @@ import { PostTranslations } from '@customTypes/Queries'
 
 export const revalidate = 86400
 
-export default async function Page({ params }: PageWithSlug) {
+export default async function Page(props: Promise<PageWithSlug>) {
+  const { params } = await props
   const { lang, slug } = await params
   const dictionary = await getDictionary(lang)
 

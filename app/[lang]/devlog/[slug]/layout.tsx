@@ -71,6 +71,8 @@ export async function generateMetadata(
   }
 }
 
-export default async function Layout({ children }: BasePage) {
+export default async function Layout(props: Promise<BasePage>) {
+  const { children } = await props
+
   return children
 }
