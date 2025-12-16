@@ -1,0 +1,132 @@
+# Privacy Policy
+
+**Last updated:** 16 Dec 2025
+
+This Privacy Policy applies to all iOS applications (“Apps”) published and maintained by **Breno Carra Fiorese** ("we", "our", or "developer"), an independent developer.
+
+By using any of our Apps, you agree to the collection and use of information in accordance with this Privacy Policy.
+
+---
+
+## 1. Information Collection and Use
+
+Our Apps are designed to work with the **minimum amount of data possible**.
+
+Depending on the App and its features, we may collect limited information to:
+
+* Provide and operate the App
+* Improve performance and stability
+* Understand usage patterns
+* Fix bugs and crashes
+
+The types of data collected may include:
+
+* Basic usage data (e.g. feature interactions)
+* Device information (such as device model, OS version)
+* Diagnostic and crash data
+
+We do **not** collect personally identifiable information unless it is strictly necessary for a feature explicitly used by the user.
+
+---
+
+## 2. Third-Party Services
+
+Some Apps may use third-party services to enable analytics, crash reporting, or specific features. These services may collect information used to identify you.
+
+Common third-party services that **may** be used include:
+
+* Apple App Store Services
+* Apple Analytics
+* Analytics or crash-reporting tools (such as Firebase or similar)
+
+Each third-party service operates under its own Privacy Policy, and we encourage you to review them.
+
+---
+
+## 3. Log Data
+
+In case of an error or crash, the App may collect Log Data through system tools or third-party services. This data may include:
+
+* Internet Protocol (IP) address
+* Device name and operating system version
+* App configuration
+* Time and date of usage
+
+This information is used solely for diagnosing issues and improving app reliability.
+
+---
+
+## 4. Cookies
+
+Our Apps do not directly use cookies.
+
+However, third-party libraries or services used by the App may use cookies or similar technologies to improve their services. You can manage cookie preferences through your device or service settings.
+
+---
+
+## 5. Service Providers
+
+We may employ third-party companies or individuals to:
+
+* Facilitate App functionality
+* Provide infrastructure or services on our behalf
+* Assist in analytics or performance monitoring
+
+These third parties have access to limited data only to perform assigned tasks and are obligated not to use or disclose it for any other purpose.
+
+---
+
+## 6. Data Storage and Processing
+
+Unless explicitly stated otherwise within an App:
+
+* Data is processed securely
+* Any temporary data sent to external services is used only to perform the requested feature
+* Data is not sold, rented, or shared for advertising purposes
+
+When applicable, processing may occur outside your country of residence, following industry-standard security practices.
+
+---
+
+## 7. Security
+
+We value your trust and take reasonable measures to protect your data.
+
+However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect information, absolute security cannot be guaranteed.
+
+---
+
+## 8. Children’s Privacy
+
+Our Apps do not knowingly collect personal information from children under the age of 13.
+
+If you believe that a child has provided personal information through one of our Apps, please contact us and we will take appropriate action.
+
+---
+
+## 9. Links to External Sites
+
+Our Apps may contain links to third-party websites or services.
+
+We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+
+---
+
+## 10. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time.
+
+Any changes will be reflected on this page, and the updated date will be shown at the top. Continued use of the Apps after changes implies acceptance of the updated policy.
+
+---
+
+## 11. Contact Information
+
+If you have any questions or concerns about this Privacy Policy, please contact:
+
+**Breno Carra Fiorese**
+📧 Email: **[brenofiorese01@gmail.com](mailto:brenofiorese01@gmail.com)**
+
+---
+
+This Privacy Policy is intended to be **generic** and applicable to all current and future iOS Apps published by the developer, unless a specific App provides a supplementary policy.

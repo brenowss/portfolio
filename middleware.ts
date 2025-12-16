@@ -38,6 +38,7 @@ export function middleware(request: NextRequest) {
       '/robots.txt',
       '/files/Breno_Fiorese(en).docx',
       '/files/Breno_Fiorese(pt).docx',
+      '/files/Privacy%20Policy.txt',
       '/images',
     ].includes(pathname)
   )
